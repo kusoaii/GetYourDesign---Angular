@@ -23,6 +23,7 @@ export class RegisterDesignerComponent implements OnInit {
   public Alerta : boolean;
   public AlertSuccess : boolean;
   public terminos;
+  public openDatePicker : boolean;
 
   constructor(
     private _designerService : DesignerService,
@@ -34,6 +35,7 @@ export class RegisterDesignerComponent implements OnInit {
     this.designer = new Designer('','','','','','','','','','','');
     this.Alerta = false;
     this.AlertSuccess = false;
+    this.openDatePicker = false;
     if(this.validarUsuario()){
       this._router.navigate(['/home']);
     }
@@ -128,6 +130,16 @@ export class RegisterDesignerComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  openDatePick(){
+    if(this.openDatePicker){
+      this.openDatePicker = false;
+    }
+    else
+    {
+      this.openDatePicker = true;
+    }
   }
 
 }

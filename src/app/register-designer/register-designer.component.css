@@ -253,3 +253,7 @@
   outline: none;
   cursor: pointer;
 }
+
+h1, h2{
+  color: #e9803d;
+}

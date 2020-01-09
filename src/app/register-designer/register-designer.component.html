@@ -23,7 +23,7 @@
         El nombre de usuario es obligatorio
     </span>
     <div id="fila4Registro">
-      <input type="text" name="Fecha_naci_disenador" #Fecha_naci_disenador="ngModel" [(ngModel)]="designer.Fecha_nacimiento" class="input_registro A5" placeholder="YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" autocomplete="off" required>
+      <input type="text" name="Fecha_naci_disenador" #Fecha_naci_disenador="ngModel" [(ngModel)]="designer.Fecha_nacimiento" class="input_registro A5" placeholder="YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" autocomplete="off" required (focus)="openDatePick()">
 
       <div class="content-check"><input type="checkbox" id="check-condiciones" name="term" #term="ngModel" [(ngModel)]="terminos" required></div><P>Acepto <a class="a-condiciones" (click)="abrirCondiciones()">terminos y condiciones de uso</a></P>
       
@@ -164,7 +164,6 @@
     </div>
   </div>
 </div>
-
 
 <app-date-picker></app-date-picker>
 

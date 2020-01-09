@@ -7,19 +7,18 @@
     padding: 0;
   } */
   .containerr{
-    position: relative;
-    width: 90%;
-    margin: 100px auto;
-    /* height: 500px; */
-    height: auto;
+    width: 95%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: auto 1fr auto;
-    grid-gap: 20px;
+    grid-gap: 30px;
+    height: auto;
+    align-items: center;
   }
   .containerr .card{
     position: relative;
-    width: 300px;
+    width: 100%;
+    align-items: center;
     height: 440px;
     background: #000;
     overflow: hidden;
@@ -103,7 +102,7 @@
     transform: translateY(-20px);
     box-shadow: 0 20px 20px rgba(0,0,0,.2);
   }
-  @media only screen and (min-width: 1650px) {
+  @media only screen and (min-width: 1500px) {
     .containerr{
       grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)) !important;
     }
