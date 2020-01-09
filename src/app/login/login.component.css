@@ -1,0 +1,126 @@
+
+.box{
+    /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+    margin: 8% auto;
+    width: 400px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    background-color: white;
+  }
+  .box h1{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #e98216;
+    text-align: center;
+  }
+  .box h2{
+    margin-left: 20%;
+    padding: 0;
+    color: #e98216;
+    text-align: left;
+  }
+  .box .inputBox{
+    position: relative;
+  }
+  .box .inputBox input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+  }
+  .box .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #81867d;
+    pointer-events: none;
+    transition: .3s;
+  }
+  .box .inputBox input:focus + label{
+    top: -18px;
+    left: 0;
+    color: #73a8d9;
+    font-size: 12px;
+  }
+  .box .inputBox input:valid + label{
+    top: -18px;
+    left: 0;
+    color: #73a8d9;
+    font-size: 12px;
+  }
+  #btn{
+    margin-left: 15%;
+    width: 70%;
+    padding: 15px;
+    border: 0;
+    background-color: #f67e1b;
+    color: white;
+    font-size: 20PX;
+    border-radius: 10PX;
+    transition: .5s;
+    cursor: pointer;
+  }
+  .alogin{
+    text-decoration: none;
+    color: #30444d;
+  }
+  #btn:hover{
+    opacity: .7;
+  }
+  #logoregistro{
+    margin-left: 42%;
+    margin-top: 2%;
+    width: 15%;
+  }
+  
+  .contenido{
+    width: 70%;
+    margin-left: 15%;
+  }
+#err{
+    margin-top: 8%;
+    font-size: 120px;
+    color: rgb(224, 78, 41);
+}
+
+#succ{
+  margin-top: 8%;
+  font-size: 120px;
+  color: rgb(53, 204, 91);
+}
+.cont-btns{
+  width: 100%;
+  margin-top: 3%;
+}
+
+.cont-alert button{
+  margin-top: 3%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 11px;
+  border: none;
+  background: #62595c;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.message-valid{
+  margin-left: 40%;
+  padding: 5px;
+  background: red;
+  font-size: 12px;
+  border-radius : 6px; 
+  color: #fff;
+}

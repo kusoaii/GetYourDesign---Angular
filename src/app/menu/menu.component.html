@@ -1,0 +1,93 @@
+<nav class="nav-res">
+  <div class="menu1">
+    <ul>
+      <li id="ii1">
+        <a id="icone" (click)="abrirMenuRes()" *ngIf="menuResponsive == false"><i class="fa fa-bars"></i></a>
+        <a id="icone" (click)="abrirMenuRes()" *ngIf="menuResponsive == true"><i class="fa fa-times"></i></a>
+      </li>
+      <li><a href="#" id="search1"><i class="fa fa-search"></i></a></li>
+      <li><a href="Raking.html" class="menu-item1">Ranking</a></li>
+      <li><a href="LINKS\InicioSesion.php" class="menu-item1">Inicio de sesion</a></li>
+      <li><a href="LINKS\RegistroDisenador.php" class="menu-item1">Registro diseñador</a></li>
+      <li><a href="LINKS\RegistroEmpresa.php" class="menu-item1">Registro empresa</a></li>
+      <li><a href="#" class="menu-item1">Acerca de</a></li>
+    </ul>
+    <div class="search-form1">
+      <form>
+          <input type="search" placeholder="search">
+      </form>
+
+    </div>
+    <a class="close1"><i class="fa fa-times"></i></a>
+  </div>
+</nav>
+
+<nav class="nav">
+<div class="menu">
+<ul>
+  <li><a routerLink="/home"><img src="../../assets/RECURSOS/ICONOS/icon4.png" id="logo"></a></li>
+  <li><a [routerLinkActive]="'link-activo'" routerLink="/ranking" class="menu-item" [ngClass]="{'hide-item' : menu}">Ranking</a></li>
+  <li *ngIf="identity == null && identityE == null"><a [routerLinkActive]="'link-activo'" routerLink="/registro-empresa" class="menu-item" [ngClass]="{'hide-item' : menu}">Registro empresa</a></li>
+  <li *ngIf="identity == null && identityE == null"><a [routerLinkActive]="'link-activo'" routerLink="/registro-diseñador" class="menu-item" [ngClass]="{'hide-item' : menu}">Registro diseñador</a></li>
+  <li *ngIf="identity == null && identityE == null"><a [routerLinkActive]="'link-activo'" routerLink="/inicio-sesion" class="menu-item" [ngClass]="{'hide-item' : menu}">Inicio de sesion</a></li>
+  <li><a href="#" class="menu-item" [ngClass]="{'hide-item' : menu}">Soporte</a></li>
+  <li>
+    <a *ngIf="identity == null && identityE == null"  id="search" (click)="abrirBusqueda()"><i class="fa fa-search" [ngClass]="{'hide' : menu}"></i></a>
+    <a *ngIf="identity || identityE" id="search" (click)="abrirBusqueda2()"><i class="fa fa-search"></i></a>
+  </li>
+  <li *ngIf="identity" class="menPerfil" (click)="abrirmen()">
+    <a class="a-hidden" routerLink="/perfil">Perfil</a>
+    <a class="a-hidden">Configuracion</a>
+    <a class="nom">{{identity.Usuario_disenador}}</a>
+    <img id="fotoPerfil"src="http://localhost:89/Angular7GYDBackend/uploads/{{identity.foto_disenador}}" alt="">
+  </li>
+  <li *ngIf="identityE" class="menPerfil" (click)="abrirmen($event)">
+    <a class="a-hidden" routerLink="/perfil-E">Perfil</a>
+    <a class="a-hidden">Configuracion</a>
+    <a class="nom">{{identityE.Usuario_empresa}}</a>
+    <img id="fotoPerfil"src="http://localhost:89/Angular7GYDBackend/uploads/{{identityE.Foto_empresa}}" alt="">
+  </li>
+</ul>
+<div class="search-form" [ngClass]="{'activado' : menu}">
+  <form>
+    <input type="search" placeholder="Busca tu diseñador" id="bb" [(ngModel)]="playerName" name="playerName" (keyup)="buscarDesigner($event)" autocomplete="off">
+  </form>
+
+</div>
+
+<button class="btn-cl" [ngClass]="{'activado' : menu}">
+  <span class="cl-search" (click)="abrirBusqueda($event)">
+    <span class="cl-IZ" [ngClass]="{'activado' : menu}"></span>
+    <span class="cl-DE" [ngClass]="{'activado' : menu}"></span>
+  </span>
+</button>
+
+<a *ngIf="identity == null && identityE == null" class="close" (click)="abrirBusqueda($event)"><i class="fa fa-times"></i></a>
+<a *ngIf="identity || identityE" class="close" (click)="abrirBusqueda2($event)"><i class="fa fa-times"></i></a>
+</div>
+</nav>
+
+<div id="container-result" *ngIf="designers && menu == true">
+  <li id="li-result" *ngFor="let designer of designers">
+    <div id="cuerporanking">
+
+    <div class="Designernum1">
+      <div class="Rankimg"><img src="http://localhost:89/Angular7GYDBackend/uploads/{{designer.foto_disenador}}" class="rr1"></div>
+      <div class="Rankdesc">
+        
+        <p class="ranknombre">{{designer.Usuario_disenador}}</p><br>
+        <a class="contactodesi" routerLink="/detalle-diseñador/{{designer.Usuario_disenador}}" (click)="CloseMen()">VER PREFIL</a><br><br>
+        <p class="txtdesigner">Puntuacion promedio<br>4.9 estrellas</p>
+        <p class="txtdesigner"></p>
+      </div>
+        
+    </div>
+
+  </div>
+   </li>
+   
+</div>
+
+
+
+

@@ -1,0 +1,181 @@
+<div id="banerPerfilRES">
+  <div class="perfil-res">
+    <div class="menupRES">
+      <ul>
+        <li id="ii1">
+          <a id="iconeRES" (click)="abrirMenuRes()" *ngIf="menuResponsive == false"><i class="fa fa-bars"></i></a>
+          <a id="iconeRES" (click)="abrirMenuRes()" *ngIf="menuResponsive == true"><i class="fa fa-times"></i></a>
+          
+        </li>
+        <li><a href="Raking.html" class="menu-item1">Tus proyectos</a></li>
+        <li><a href="LINKS\InicioSesion.php" class="menu-item1">Tus clientes</a></li>
+        <li><a href="LINKS\RegistroDisenador.php" class="menu-item1">Comunidad</a></li>
+        <li><a href="LINKS\RegistroEmpresa.php" class="menu-item1">Centro de ayuda</a></li>
+        <li><a href="#" class="menu-item1">Acerca de</a></li>
+      </ul>
+      <div class="search-form1">
+        <form>
+            <input type="search" placeholder="search">
+        </form>
+  
+      </div>
+      <a class="close1"><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <div id="AreafotoperfilRES">
+          <img src="{{resources}}uploads/{{identity.foto_disenador}}" id="fotoperfilRES">
+       
+  <p id="nombredesignerRES">{{identity.Usuario_disenador}}</p>
+  <div id="e4RES"><a routerLink="/perfil/editar" id="btneditar">Editar perfil</a></div>
+  </div>
+  <div id="Edicion">
+    <div id="e1RES"><button class="aa1" (click)="abrirPortafolio()">Portafolio</button></div>
+    <div id="e2RES"><button class="aa1" (click)="abrirSobremi()">Sobre mi</button></div>
+    <div id="e3RES"></div>
+    
+  </div>
+</div>
+
+<div id="banerPerfil">
+    <div id="menuperfil">
+      <div id="Arealogito"><a routerLink="/home"><img src="../../../../assets/RECURSOS/ICONOS/icon1.png" id="iconperfil"></a></div>
+      <div class="Areamenicito"><br><a href="GestionProyectos.php" class="aa2"></a></div>
+      <div class="Areamenicito"><br><a href="#" class="aa2"></a></div>
+      <div class="Areamenicito"><br><a href="#" class="aa2"></a></div>
+      <div id="Espbanerperfil"></div>
+      <div id="centroayuda"><br><a href="#" class="aa2"></a></div>
+      <div id="notificaciones">
+        <br>
+        <img src="../../../../assets/RECURSOS/Icons/icons8-menú-en-círculos-50.png" alt="" (click)="onShowMenuMosaic()">
+        <div class="mosaicMenu" *ngIf="menuMosaic">
+          <app-mosaic-menu></app-mosaic-menu>
+        </div>
+      </div>
+      <div id="cerrarsesion"><img src="{{resources}}uploads/{{identity.foto_disenador}}" id="cerraricon" (click)="abrirMenu()">
+        <ul id="cerrarmenu">
+          <li><a (click)="cerrarSesion()" class="aa3">Cerrar sesion</a></li>
+          <br>
+            <li class="lii"><a href="#" class="aa3">Ajustes de perfil</a></li>
+          </ul>
+      </div>
+    </div>
+    <div id="Areafotoperfil">
+      <div id="fotico">
+        <div class="img-box">
+            <img src="{{resources}}uploads/{{identity.foto_disenador}}" id="fotoperfil">
+        </div>
+        <div class="content">
+            <input type="file" name="subir_portafolio" id="file2" class="inputfile" accept="image/*" required (change)="fileToUploadPerfil($event)"/>
+              <label for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
+        </div>
+          
+    </div>
+    <div id="nombre"><p id="nombredesigner">{{identity.Usuario_disenador}}</p></div>
+    </div>
+    <div id="Edicion">
+      <div id="e1"><button class="aa1" (click)="abrirPortafolio()">Portafolio</button></div>
+      <div id="e2"><button class="aa1" (click)="abrirSobremi()">Sobre mi</button></div>
+      <div id="e3"></div>
+      <div id="e4"><a routerLink="/perfil/editar" id="btneditar">Editar perfil</a></div>
+    </div>
+  </div>
+  
+  <div id="cuerpoperfil">
+
+      <div id="portafolio" *ngIf="portOrabout == true">
+        <div *ngIf="portafolios">
+            <div class="cont-porta">
+                <br><br><br>
+                <input type="file" name="subir_portafolio" id="file" class="inputfile" accept="image/*" required (change)="fileToUpload($event)"/>
+                <label for="file" type="file" id="btnañadir" name="btnañadir">AÑADIR</label>
+        
+                </div>
+              <div id="llenar">
+                  <div class="porta1" *ngFor="let portafolio of portafolios">
+                      <img src="{{resources}}portafolios/{{portafolio.Nombre_foto_portafolio}}" class="rr2" (click)="onShowPortfolioImage(portafolio)">
+                      
+                  </div>
+              </div>
+        </div>
+
+        <div id="container-vacio" *ngIf="!portafolios">
+            <div class="vacio-cont">
+                <br><br><br>
+                <img src="../../../../assets/RECURSOS/galeria.png" id="galeria">
+                <br>
+                <p id="perfilp1">Bienvenido a tu perfil</p>
+                <br>
+                <p id="perfilp2">Parece que tu portafolio está vacio.<br>puedes añadir cosas</p>
+                <br>
+                <input type="file" name="subir_portafolio" id="file" class="inputfile" accept="image/*" required (change)="fileToUpload($event)"/>
+                <label for="file" type="file" id="btnañadir" name="btnañadir">AÑADIR</label>
+            </div>
+        </div>
+            
+    </div>
+    <div id="demi"  *ngIf="portOrabout == false">
+      <div id="demiizquierdo"><p id="sobremi_p">Sobre mi</p>
+        <p id="desc_designer">{{identity.Descripcion_disenador}}</p>
+      </div>
+      <div id="demiderecho">
+        <p class="atributos">Calificaciones:</p>
+        <br>
+        <p class="atributos">Certificaciones:</p>
+        <br>
+        <p class="atributos">Logros:</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="alert-custom" *ngIf="Alerta">
+    <div class="cont-alert">
+      <div class="contenido">
+        <i class="fa fa-exclamation-circle" aria-hidden="true" id="err"></i>
+        <h2>¿Estas seguro?</h2>
+        <p>De subir este elemento a la plataforma</p>
+      </div>
+      <div class="cont-btns">
+        <button (click)="subirPorta()" class="btn-aceptar">Aceptar</button>
+        <button (click)="cerrarAlert()" class="btn-cancel">Cancelar</button>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="alert-custom" *ngIf="AlertaPerfil">
+      <div class="cont-alert">
+        <div class="contenido">
+          <i class="fa fa-exclamation-circle" aria-hidden="true" id="err"></i>
+          <h2>¿Estas seguro?</h2>
+          <p>De subir este elemento a la plataforma</p>
+        </div>
+        <div class="cont-btns">
+          <button (click)="editarFoto()" class="btn-aceptar">Aceptar</button>
+          <button (click)="cerrarAlert()" class="btn-cancel">Cancelar</button>
+          
+        </div>
+      </div>
+    </div>
+
+  <div class="alert-custom" *ngIf="AlertaDelete">
+    <div class="cont-alert">
+      <div class="contenido">
+        <i class="fa fa-exclamation-circle" aria-hidden="true" id="dan"></i>
+        <h2>¿Estas seguro?</h2>
+        <p>De eliminar este elemento</p>
+      </div>
+      <div class="cont-btns">
+        <button (click)="eliminarPorta()" class="btn-aceptar">Aceptar</button>
+        <button (click)="cerrarAlert()" class="btn-cancel">Cancelar</button>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="open-portfolio" *ngIf="openPortfolio">
+    <div class="container-image">
+      <img src="" alt="" id="imagePortfolio">
+    </div>
+  </div>

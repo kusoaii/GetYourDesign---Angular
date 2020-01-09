@@ -1,0 +1,59 @@
+<div class="contOpacity">
+  <div class="contPicker">
+      <div class="cardPickerInfo">
+          <img src="bi.png" alt="">
+          <br>
+          <a id="dayNumber">{{Day}}</a>
+          <p id="dayWord">{{DayWeek}}</p>
+      </div>
+      <div class="cardPicker">
+              <div class="top">
+                  
+                  <div class="plus topIcons">
+                      <i class="fa fa-times" aria-hidden="true"></i>
+                  </div>
+              </div>
+              <div id="bodyCalendar">
+                  <div class="MonthYear" *ngIf="selectMonth == false">
+                      <div class="MonthTXT" (click)="chooseMonth()"><h3 id="monthSelected">{{Month}}</h3></div>
+                      <div class="YearTXT"><h3>{{Year}}</h3></div>
+                  </div>       
+                      <table *ngIf="selectMonth == false">
+                          <thead>
+                              <th>S</th>
+                              <th>M</th>
+                              <th>T</th>
+                              <th>W</th>
+                              <th>T</th>
+                              <th>F</th>
+                              <th>S</th>
+                          </thead>
+                          <tbody id="calendar-body">
+                              {{templateRow}}
+                          </tbody>
+                      </table>
+                      <button id="btnOk" *ngIf="selectMonth == false">Aceptar</button>
+
+                      <div class="setmonths" *ngIf="selectMonth == true">
+                        <div class="columnMonths">
+                            <div class="month" (click)="selectedMonth($event)">Enero</div>
+                            <div class="month" (click)="selectedMonth($event)">Marzo</div>
+                            <div class="month" (click)="selectedMonth($event)">Mayo</div>
+                            <div class="month" (click)="selectedMonth($event)">Julio</div>
+                            <div class="month" (click)="selectedMonth($event)">Septiembre</div>
+                            <div class="month" (click)="selectedMonth($event)">Noviembre</div>
+                        </div>
+                        <div class="columnMonths">
+                            <div class="month" (click)="selectedMonth($event)">Febrero</div>
+                            <div class="month" (click)="selectedMonth($event)">Abril</div>
+                            <div class="month" (click)="selectedMonth($event)">Junio</div>
+                            <div class="month" (click)="selectedMonth($event)">Agosto</div>
+                            <div class="month" (click)="selectedMonth($event)">Obtubre</div>
+                            <div class="month" (click)="selectedMonth($event)">Diciembre</div>
+                        </div>                
+                    </div>
+
+              </div>
+          </div>
+  </div>
+</div>

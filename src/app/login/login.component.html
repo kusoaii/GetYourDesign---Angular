@@ -1,0 +1,50 @@
+<!--<span *ngIf="!Usuario_disenador.valid && Usuario_disenador.touched" class="message-valid">
+    Esos caracteres no son permitidos
+</span>
+<span *ngIf="!Contrasena_login.valid && Contrasena_login.touched" class="message-valid">
+    Esos caracteres no son permitidos
+</span>-->
+<div class="box">
+  <h1>Iniciar sesión</h1>
+  <h2>_</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      
+    <div class="inputBox">
+      <input type="text" name="Usuario_login" #Usuario_disenador="ngModel" [(ngModel)]="designer.Usuario_disenador" required>
+      <label>Usuario</label>
+      
+    </div>
+
+    <div class="inputBox">
+      <input type="password" name="Contrasena_login" #Contrasena_login="ngModel" [(ngModel)]="designer.password" required>
+      <label>Contraseña</label>
+    </div>
+
+    <a class="alogin" href="#">¿Ha olvidado su Contraseña?</a>
+    <br>
+    <br>
+    <br>
+    <input type="submit" name="btn_inicio_dise" value="Iniciar sesion" id="btn">
+    <br>
+    <br>
+    <br>
+    <a class="alogin" href="index.php">¿Aun no eres miembro? Registrate</a>
+  </form>
+</div>
+
+
+
+<div class="alert-custom" *ngIf="Alerta">
+  <div class="cont-alert">
+    <div class="contenido">
+      <i class="fa fa-times" aria-hidden="true" id="err"></i>
+      <h2>¡Fallo al ingresar!</h2>
+      <p>El usuario y la contraseña no coinciden</p>
+    </div>
+    <div class="cont-btns">
+      <button (click)="cerrarAlert()">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<app-clouds></app-clouds>

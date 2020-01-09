@@ -1,0 +1,46 @@
+<div id="banerPerfiledit">
+    <div id="menuperfil">
+      <div id="Arealogito"><img src="../assets/RECURSOS/ICONOS/icon1.png" id="iconperfil"></div>
+      <div class="Areamenicito"><br><a href="GestionProyectos.php" class="aa2">Tus proyectos</a></div>
+      <div class="Areamenicito"><br><a href="#" class="aa2">Tus clientes</a></div>
+      <div class="Areamenicito"><br><a href="#" class="aa2">Comunidad</a></div>
+      <div id="Espbanerperfil"></div>
+      <div id="centroayuda"><br><a href="#" class="aa2">Centro de ayuda</a></div>
+      <div id="notificaciones"><br><a href="#" class="fa fa-envelope" aria-hidden="true" id="iconocarta"></a></div>
+      <div id="cerrarsesion"><img src="http://localhost:89/Angular7GYDBackend/uploads/{{identity.foto_disenador}}" id="cerraricon">
+        <ul id="cerrarmenu">
+          <li><a href="../index.php" class="aa3">Cerrar sesion</a></li>
+          <br>
+            <li class="lii"><a href="#" class="aa3">Ajustes de perfil</a></li>
+          </ul>
+      </div>
+    </div>
+    <div id="AreaTedit">
+      <br><br><br>
+
+
+      <a routerLink="/perfil" id="volverperfil">Volver al perfil</a>
+        <p id="tituloeditar">{{title}}</p>
+    </div>
+
+  </div>
+  <div class="solicitud-vacio" *ngIf="messages == null">
+    <span>
+      No hay solicitudes
+    </span>
+  </div>
+
+  <div *ngFor="let message of messages" id="cont-mensajes"> 
+    <div class="mens" (click)="abrirMensaje(message.Mensage,message.Remitente_m,message.Email_m)">
+      <i class="fa fa-envelope icon" aria-hidden="true"></i>
+      <p><strong>Remitente:</strong> {{message.Remitente_m}}</p>
+      <i class="fa fa-trash delete" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="viewMessage" *ngIf="openMessage">
+      <button (click)="closeMessage()">Cerrar</button>
+      <p id="remi">{{remitente}}</p>
+      <p>{{cont}}</p>
+      <p><strong>Correo: </strong> {{correo}}</p>
+  </div>

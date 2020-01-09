@@ -1,0 +1,61 @@
+<div id="banerPerfiledit">
+        <div id="menuperfil">
+          <div id="Arealogito"><img src="../assets/RECURSOS/ICONOS/icon1.png" id="iconperfil"></div>
+          <div class="Areamenicito"><br><a href="GestionProyectos.php" class="aa2">Tus proyectos</a></div>
+          <div class="Areamenicito"><br><a href="#" class="aa2">Tus clientes</a></div>
+          <div class="Areamenicito"><br><a href="#" class="aa2">Comunidad</a></div>
+          <div id="Espbanerperfil"></div>
+          <div id="centroayuda"><br><a href="#" class="aa2">Centro de ayuda</a></div>
+          <div id="notificaciones"><br><a href="#" class="fa fa-envelope" aria-hidden="true" id="iconocarta"></a></div>
+          <div id="cerrarsesion"><img src="http://localhost:89/Angular7GYDBackend/uploads/{{identity.foto_disenador}}" id="cerraricon">
+            <ul id="cerrarmenu">
+              <li><a href="../index.php" class="aa3">Cerrar sesion</a></li>
+              <br>
+                <li class="lii"><a href="#" class="aa3">Ajustes de perfil</a></li>
+              </ul>
+          </div>
+        </div>
+        <div id="AreaTedit">
+          <br><br><br>
+  
+  
+          <a routerLink="/perfil" id="volverperfil">Volver al perfil</a>
+            <p id="tituloeditar">Editar perfil</p>
+        </div>
+  
+      </div>
+      <!-- <div id="cuepoeditar"> -->
+      <form #editForm="ngForm" (ngSubmit)="onSubmit()">
+        
+  
+        <div id="boxeditar">
+            
+          <div id="editaresp">
+              
+          </div>
+          <p *ngIf="message">
+              <span id="message-edit">Se han actualizado correctamente los datos</span>
+          </p>
+          <br>
+          <label class="lbledit">Email</label><br><br>
+          <input type="email" name="Correo_e_disenador" #Correo_e_disenador="ngModel" [(ngModel)]="designer.Correo_e_disenador" id="inppedit">
+          <br><br><br>
+          <label class="lbledit">Nombre de usuario</label><br><br>
+          <input type="text" name="Usuario_disenador" #Usuario_disenador="ngModel" [(ngModel)]="designer.Usuario_disenador" id="inppedit"><br><br>
+          <label class="lbledit">Descripcion personal</label>
+          <br><br>
+          <textarea name="Descripcion_disenador" #Descripcion_disenador="ngModel" [(ngModel)]="designer.Descripcion_disenador" rows="8" cols="50" class="inpedit" ></textarea>
+  
+  
+          <div id="botonoesedit">
+      
+            <button id="edit-save" type="submit" name="btn_editar_dise">GUARDAR</button>
+            <button id="edit-cancel" type="reset">CANCELAR</button>
+       
+          </div>
+          
+        </div>
+        
+      </form>
+
+  

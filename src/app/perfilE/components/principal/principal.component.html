@@ -1,0 +1,48 @@
+<div id="banerPerfilEM">
+    <div id="menuperfil">
+      <div id="Arealogito"><img src="../../../../assets/RECURSOS/ICONOS/icon1.png" id="iconperfil"></div>
+      <div class="Areamenicito"><br><a href="GestionProyectosEM.html" class="aa2">Tus proyectos</a></div>
+      <div class="Areamenicito"><br><a routerLink="/ranking" class="aa2">Diseñadores</a></div>
+      <div class="Areamenicito"><br><a href="#" class="aa2">Otros proyectos</a></div>
+      <div id="Espbanerperfil"></div>
+      <div id="centroayuda"><br><a href="#" class="aa2">Centro de ayuda</a></div>
+      <div id="notificaciones"><br><a href="#" class="fa fa-envelope" aria-hidden="true" id="iconocartaEM"></a></div>
+      <div id="cerrarsesion"><img src="{{resources}}uploads/{{identity.Foto_empresa}}" id="cerraricon" (click)="abrirMenu()">
+        <ul id="cerrarmenuEM">
+          <li><a class="aa3" (click)="cerrarSesion()">Cerrar sesion</a></li>
+          <br/>
+            <li class="lii"><a href="#" class="aa3">Ajustes de perfil</a></li>
+          </ul>
+      </div>
+    </div>
+    <div id="Areafotoperfil">
+      <div id="fotico">
+      <img src="{{resources}}uploads/{{identity.Foto_empresa}}" id="fotoperfil">
+    </div>
+    <div id="nombre"><p id="nombredesigner">{{identity.Usuario_empresa}}</p></div>
+    </div>
+    <div id="Edicion">
+      <!-- <div id="e1"><button id="portafijo" class="aa1" onclick="abrirportafolio()">Portafolio</button></div>
+      <div id="e2"><button class="aa1" onclick="abrirsobremi()">Sobre mi</button></div> -->
+      <div id="e3EM"></div>
+      <div id="e4EM"><a href="EditarPerfilEM.php" id="btneditarEM">Editar perfil</a></div>
+    </div>
+  </div>
+
+
+  <div id="cuerpoperfil">
+
+    <div id="demiEM">
+      <div id="demiizquierdo"><p id="sobremi_p">Sobre mi</p>
+        <p id="descri_dise">{{identity.Descripcion_empresa}}</p>
+      </div>
+      <div id="demiderecho">
+        <p class="atributos">Proyectos creados:</p>
+        <br>
+        <p class="atributos">Certificaciones:</p>
+        <br>
+        <p class="atributos">Logros:</p>
+      </div>
+    </div>
+
+  </div>

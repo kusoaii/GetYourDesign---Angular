@@ -1,0 +1,155 @@
+<form #registroEmpresa="ngForm" (ngSubmit)="onSubmit()">
+<div class="boxreg2" *ngIf="next == true">
+  <h1>Documentacion</h1>
+  <h2>_</h2>
+ 
+    <div id="fila1Registro2">
+      <textarea name="Descripcion_empresa" #Descripcion_empresa="ngModel" [(ngModel)]="empresa.Descripcion_empresa" rows="4" cols="80" id="largo3" class="input_registro redimension" placeholder="Descripcion empresarial"></textarea>
+    </div>
+    <div id="fila2RegistroD">
+      <input type="text" name="Documento_RUT_empresa" #Documento_RUT_empresa="ngModel" [(ngModel)]="empresa.Documento_RUT_empresa" placeholder="Documento RUT" class="input_registro" required>
+      <input type="file" name="Foto_empresa" id="file" class="inputfile" accept="image/*" data-multiple-caption="{count} files selected" multiple  (change)="cambionom($event)"/>
+      <label for="file" class="Doc" id="fichero">FOTO PERFIL</label>
+    </div>
+    <span *ngIf="!Documento_RUT_empresa.valid && Documento_RUT_empresa.touched" class="message-valid">
+      El documento RUT es obligatorio
+    </span>
+    <div id="fila5Registro">
+      <input type="text" name="Usuario_empresa" #Usuario_empresa="ngModel" [(ngModel)]="empresa.Usuario_empresa" placeholder="Nombre de usuario" class="input_registro" required>
+      <div class="content-check"><input type="checkbox" id="check-condiciones" name="term" #term="ngModel" [(ngModel)]="terminos" required></div><P>Acepto <a class="a-condiciones" (click)="abrirCondiciones()">terminos y condiciones de uso</a></P>
+    </div>
+    
+    <div id="fila4Registro">
+        <span *ngIf="!Usuario_empresa.valid && Usuario_empresa.touched" class="message-valid">
+            El nombre de usuario es obligatorio
+          </span>
+          <span class="message-valid" *ngIf="!term.valid">
+            Es necesario aceptar los terminos para registrarse
+          </span>
+      <!-- <input type="file" name="Documento_DIAN_empresa" id="file" class="inputfile" accept="image/*" data-multiple-caption="{count} files selected" multiple/>
+      <label for="file" CLASS="Doc">DOCUMENTO DE LA DIAN</label> -->
+      <div>
+
+    </div>
+    </div>
+    <br>
+    <div id="Areabotones">
+    <button type="button" name="button" id="btnvolver" (click)="seguirRegistro()">volver</button>
+    <button type="submit" name="btn_registrar_empresa" id="btnregistro" [disabled]="!registroEmpresa.valid || terminos == false || empresa.contrasena != empresa.contrasena_v">Registrarse</button>
+  </div>
+
+</div>
+
+<div class="boxreg" *ngIf="next == false">
+  <h1 id="PRE">Registro Empresa</h1>
+  <h2>_</h2>
+    <span class="message-valid" *ngIf="!Nombre_empresa.valid || !Ciudad_empresa.valid || !Correo_e_empresa.valid || !Nit_empresa.valid || !contrasena.valid || !contrasena_v.valid">
+      Llene los campos correctamente para continuar
+    </span>
+    <div id="fila1Registro">
+      <input type="text" name="Nombre_empresa" #Nombre_empresa="ngModel" [(ngModel)]="empresa.Nombre_empresa" placeholder="Nombre empresa" class="input_registro" required>
+      <input type="text" name="Ciudad_empresa" #Ciudad_empresa="ngModel" [(ngModel)]="empresa.Ciudad_empresa" placeholder="Ciudad" class="input_registro" required>
+    </div>
+    <span *ngIf="!Nombre_empresa.valid && Nombre_empresa.touched" class="message-valid">
+      El nombre es obligatorio
+    </span>
+    <span *ngIf="!Ciudad_empresa.valid && Ciudad_empresa.touched" class="message-valid">
+      La cuidad es obligatoria
+    </span>
+    <div id="fila2Registro">
+      <input type="email" name="Correo_e_empresa" #Correo_e_empresa="ngModel" [(ngModel)]="empresa.Correo_e_empresa" placeholder="Email" class="input_registro" id="largo1" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    </div>
+    <span *ngIf="!Correo_e_empresa.valid && Correo_e_empresa.touched" class="message-valid">
+      El correo es incorrecto
+    </span>
+    <div id="fila3Registro">
+      <input type="text" name="Nit_empresa" #Nit_empresa="ngModel" [(ngModel)]="empresa.Nit_empresa" placeholder="Nit" class="input_registro" id="largo2" required>
+    </div>
+    <span *ngIf="!Nit_empresa.valid && Nit_empresa.touched" class="message-valid">
+      El nit es obligatorio
+    </span>
+    <div id="fila4Registro">
+      <input type="password" name="contrasena" #contrasena="ngModel" [(ngModel)]="empresa.contrasena" placeholder="Contraseña" class="input_registro" required>
+      <input type="password" name="contrasena_repeitr" #contrasena_v="ngModel" [(ngModel)]="empresa.contrasena_v" placeholder="Confirmacion de Contraseña" class="input_registro" required>
+    </div>
+    <div>
+      <span *ngIf="!contrasena.valid && contrasena.touched" class="message-valid">
+        La contraseña es obligatoria
+      </span>
+      <span *ngIf="empresa.contrasena != empresa.contrasena_v" class="message-valid">
+        Las contraseñas no coinciden
+      </span>
+    </div>
+    <br>
+    <button [disabled]="!Nombre_empresa.valid || !Ciudad_empresa.valid || !Correo_e_empresa.valid || !Nit_empresa.valid || !contrasena.valid || !contrasena_v.valid" type="button" name="button" id="btnseguirreg" (click)="seguirRegistro()">Siguiente</button>
+  
+</div>
+</form>
+<div class="contenedor-condiciones"  *ngIf="condiciones">
+<button class="cerrar-condiciones" (click)="abrirCondiciones()">CERRAR</button>
+<h2>Condiciones de uso</h2>
+<h3>1. Su privacidad</h3>
+<p>Su privacidad es importante para nosotros. Lea la Declaración de Privacidad de Get Your Design (la "Declaración de Privacidad"), ya que en ella se describen los tipos de datos que recopilamos de usted y sus dispositivos ("Datos"), el uso que hacemos de tales Datos y las bases legales que tenemos para procesar sus Datos. En la Declaración de Privacidad también se describe el uso que hace Get Your Design  del contenido del usuario, que incluye las comunicaciones con otras usuarios, las publicaciones que usted envía a Get Your Design  a través de los Servicios, así como los archivos, las fotos, los documentos, los archivos de audio, los trabajos digitales y los videos que carga, almacena, difunde o comparte mediante los Servicios ("Su Contenido"). Get Your Design  se permite informar que en cumplimiento de la Ley Estatutaria 1581 del 2012, por la cual se estable el ‘Régimen General de Protección de Datos’ y el Decreto Reglamentario 1377 del 2013”, demanda respetuosamente su autorización para que de manera libre, previa, clara, expresa, voluntaria y debidamente informada permita a la Entidad recolectar, recaudar, almacenar, usar, procesar, compilar, intercambiar con otras Entidades Públicas, dar tratamiento, actualizar y disponer de los datos que serán suministrados y que se incorporen en nuestras bases de datos. Esta información es y será utilizada en el desarrollo de las funciones  propias de la Entidad.</p>
+<br>
+<br>
+<p>Por favor recuerde que usted, como titular de datos personales, tiene derecho a:</p>
+<p>•	Solicitar prueba de su autorización.</p>
+<p>•	Ser informado sobre el uso que se le está dando a sus datos personales.</p>
+<p>•	Presentar reclamaciones ante cualquier autoridad competente, en especial ante la Superintendencia de Industria y Comercio, por la violación de las leyes y regulaciones de protección de datos personales.</p>
+<p>•	Revocar su autorización al procesamiento de datos personales, o a solicitar la eliminación de sus datos personales, cuandoquiera que la autoridad competente haya determinado que las partes autorizadas al procesamiento han violado las normas relevantes.</p>
+<p>•	Revocar su autorización al procesamiento de datos personales, o a solicitar la eliminación de sus datos personales, cuandoquiera que la autoridad competente haya determinado que las partes autorizadas al procesamiento han violado las normas relevantes.</p>
+<br>
+<br>
+<h3>2.	Código de conducta.</h3>
+<p>Al aceptar los presentes Términos, usted acepta que, cuando use los Servicios de Get Your Design, seguirá estas reglas:</p>
+<h3>I.</h3>  <p>  No hará nada ilegal. </p>
+<h3>II.</h3> <p>   No participará en actividades que exploten, dañen o amenacen con dañar a niños.</p>
+<h3>III.</h3> <p>   No enviará información no deseada. Esta incluye todo tipo de publicaciones en la plataforma y/o solicitudes de contacto.</p>
+<h3>IV.</h3> <p>   No mostrará ni usará públicamente los Servicios para compartir contenido o material inapropiado (esto incluye, entre otros, desnudez, brutalidad, pornografía, lenguaje ofensivo, violencia gráfica o actividad criminal) o Su Contenido o material que no cumpla con las leyes o regulaciones locales.</p>
+<h3>V.</h3> <p>   No participará en actividades fraudulentas, falsas o engañosas (por ejemplo, pedir dinero con pretextos falsos, hacerse pasar por otra persona, manipular los Servicios para aumentar las puntuaciones o afectar las clasificaciones y/o las calificaciones), difamatorias o calumniosas.</p>
+<h3>VI.</h3> <p>   No eludirá ninguna restricción en cuanto al acceso o disponibilidad de los Servicios.</p>
+<h3>VII.</h3> <p>   No participará en actividades dañinas para usted, los Servicios u otras personas o usuarios (por ejemplo, transmitir virus, acosar, publicar contenido terrorista, comunicar discursos de odio o promover violencia en contra de otros).</p>
+<h3>VIII.</h3> <p>   No infringirá los derechos de otros (por ejemplo, al compartir de manera no autorizada música diseños u otros materiales audiovisuales con derechos de autor.</p>
+<h3>IX.</h3> <p>   No participará en actividades que infrinjan la privacidad o los derechos de protección de datos de otros.</p>
+<h3>X.</h3> <p>   No ayudará a otros a infringir estas reglas.</p>
+<br>
+<br>
+<h3>3.	Su contenido</h3>
+<p>Su Contenido. Muchos de nuestros Servicios le permiten almacenar o compartir Su Contenido o recibir material de parte de otras personas. No reclamamos la propiedad de Su Contenido. Su Contenido sigue siendo Su Contenido y usted es responsable del mismo.</p>
+<h3>A.</h3> <p>Cuando comparte Su Contenido con otras personas, usted comprende que quizá puedan, a nivel mundial, usar, guardar, grabar, reproducir, transmitir, compartir y mostrar Su Contenido sin necesidad de ofrecerle compensación alguna. Si no desea que terceros tengan esa capacidad, no use los Servicios para compartir Su Contenido. Usted declara y garantiza que mientras estén vigentes los presentes Términos tiene (y tendrá) todos los derechos necesarios para Su Contenido cargado, almacenado o compartido en o a través de los Servicios y que la recopilación, el uso y la conservación de Su Contenido no infringirá ninguna ley ni derecho de otros. Get Your Design no es propietario, no controla, no verifica, no paga, no endosa ni asume responsabilidad legal alguna respecto de Su Contenido y, por ende, no será responsable de Su Contenido o del material que otros carguen, almacenen o compartan mediante el uso de los Servicios.</p>
+<h3>B.</h3> <p>En la medida de lo necesario para proveerle los Servicios a usted y a otros, para protegerlo a usted y a los Servicios, y para mejorar los productos y servicios de Get Your Design, usted le otorga a Get Your Design una licencia de propiedad intelectual a nivel mundial y sin el pago de regalías para usar Su Contenido, por ejemplo, para hacer copias, conservar, transmitir, dar nuevo formato, mostrar y distribuir Su Contenido en los Servicios a través de herramientas de comunicación. Si usted publica Su Contenido en áreas del Servicio en el que esté disponible en línea sin restricciones, es posible que Su Contenido aparezca en demostraciones o materiales que promueven el Servicio. Algunos de los Servicios se sustentan con publicidad. Los controles para establecer cómo Get Your Design personaliza la publicidad están disponibles en la página Seguridad y privacidad del sitio web de administración de la cuenta Get Your Design. No usamos lo que usted dice en correos electrónicos, chat, video llamadas o mensajes de voz, como tampoco sus documentos, fotos u otros archivos personales para dirigir publicidad destinada a usted. Nuestras políticas de publicidad están cubiertas en detalle en la Declaración de Privacidad.</p>
+<h3>C.</h3> <p>Acepta no utilizar el Sitio o los Servicios con ningún Contenido de Usuario o proporcionar productos o servicios que (a) infrinjan cualquier derecho de terceros, incluidos los derechos de autor, marcas comerciales, patentes, secretos comerciales, derechos morales, derechos de privacidad, derechos de publicidad, o cualquier otra propiedad intelectual o derecho de propiedad (incluido el hecho de permitir que un tercero descargue o reutilice cualquier Contenido del usuario que infrinja dichos derechos de terceros, mediante el uso de cualquier trabajo en forma editorial sin colocar el crédito o la atribución necesarios o por publicar o cargar o permitir que cualquier tercero publique o cargue cualquier Contenido de usuario en sitios de redes sociales que otorguen derechos exclusivos o propiedad con respecto a dicho Contenido de usuario a cualquier tercero); (b) es ilegal, hostigador, abusivo, tortuoso, amenazador, dañino, invasivo de la privacidad de otra persona, vulgar, difamatorio, falso, intencionalmente engañoso, libertino, calumnioso, indecente, pornográfico, obsceno, evidentemente ofensivo (por ejemplo, material que promueve el racismo , intolerancia, odio o daño físico de cualquier tipo contra cualquier grupo o individuo) o material censurable de cualquier tipo o naturaleza o que sea perjudicial para los menores de cualquier manera o que de otro modo implicaría que el creador del Contenido del usuario, o el Las personas o propiedades que aparecen en el Contenido del usuario (si corresponde), respaldan cualquier movimiento o partido político, económico u otro basado en la opinión o de una manera que coloque a cualquier persona en el Contenido del usuario en una mala imagen o en una forma difamatoria, ilegal o inmoral. o de manera ofensiva; (c) está en violación de cualquier Ley, o de las obligaciones o restricciones impuestas por cualquier tercero; o (d) causaría un riesgo importante para la seguridad o las operaciones de Get Your Design o cualquier tercero.</p>
+<br>
+<br>
+<h3>4.	Disponibilidad del Servicio.</h3>
+<h3>A.</h3> <p>Es posible que los Servicios, las Aplicaciones y Servicios de Terceros o los materiales o productos ofrecidos a través de los Servicios no estén disponibles cada cierto tiempo, que se ofrezcan de manera limitada o que varíen en función de su región o dispositivo. Si cambia la ubicación asociada con su cuenta Get Your Design, es posible que necesite volver a adquirir material o aplicaciones que estaban disponibles y por las que ya había pagado en su región anterior. Usted acepta no conectarse a ni usar los materiales o los Servicios que sean ilegales o no cuenten con licencia de uso en el país desde el cual usted se conecta a o usa tales materiales y Servicios, asimismo acepta no ocultar ni declarar una ubicación o identidad falsa para conectarse o usar tales materiales o Servicios.</p>
+<h3>B.</h3> <p>Hacemos nuestro mayor esfuerzo por mantener los Servicios en funcionamiento; no obstante, todos los servicios en línea sufren interrupciones ocasionales, y Get Your Design no es responsable de ninguna interrupción o pérdida que usted sufra como consecuencia de ello. En el caso de una interrupción, es posible que no pueda recuperar Su Contenido o Datos que ha almacenado. Le recomendamos que respalde permanentemente Su Contenido y Datos que almacena en los Servicios o con Aplicaciones y Servicios de Terceros.</p>
+</div>
+
+<div class="alert-custom" *ngIf="Alerta">
+  <div class="cont-alert">
+    <div class="contenido">
+      <i class="fa fa-exclamation-circle" aria-hidden="true" id="err"></i>
+      <h2>Fallo al registrarse</h2>
+      <p>{{messageAlert}}</p>
+    </div>
+    <div class="cont-btns">
+      <button (click)="cerrarAlert()">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<div class="alert-custom" *ngIf="AlertSuccess">
+  <div class="cont-alert">
+    <div class="contenido">
+      <i class="fa fa-check" aria-hidden="true" id="succ"></i>
+      <h2>Registro correcto</h2>
+      <p>{{messageAlert}}</p>
+    </div>
+    <div class="cont-btns">
+      <button (click)="cerrarAlert()">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<app-clouds></app-clouds>

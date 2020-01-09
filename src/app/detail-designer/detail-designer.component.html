@@ -1,0 +1,107 @@
+<div id="banerPerfil">
+  <div id="menuperfil">
+    
+    <div class="Areamenicito"><br></div>
+    <div class="Areamenicito"><br></div>
+    <div class="Areamenicito"><br></div>
+    <div id="Espbanerperfil"></div>
+    <div id="centroayuda"><br></div>
+    <div id="notificaciones"><br></div>
+
+  </div>
+  <div id="Areafotoperfil">
+    <div id="fotico">
+    <img src="{{resources}}uploads/{{designer.foto_disenador}}" id="fotoperfil">
+  </div>
+  <div id="nombre"><p id="nombredesigner">{{designer.Usuario_disenador}}</p><a href="#" class="fa fa-envelope" aria-hidden="true" id="iconocartaB"></a></div>
+  </div>
+  <div id="Edicion">
+    <div id="e1"><button class="aa1B" (click)="abrirPortafolio()">Portafolio</button></div>
+    <div id="e2"><button id="portafijo2" class="aa1B" (click)="abrirSobremi()">Acerca de</button></div>
+    <div id="e3"></div>
+    <div id="e4">
+      <a routerLink="/inicio-sesion" id="btneditar" *ngIf="identityE == null && identity == null">Solicitar</a>
+      <a (click)="enviarSolicitud()" id="btneditar" *ngIf="identityE != null">solicitud</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="cuerpoperfil">
+  <div id="portafolioB" *ngIf="portOrabout == false">
+    
+
+      <div *ngIf="portafolios">
+          <div class="cont-porta">
+              <br><br><br>
+      
+              </div>
+            <div id="llenar">
+                <div class="porta1" *ngFor="let portafolio of portafolios">
+                    <img src="{{resources}}portafolios/{{portafolio.Nombre_foto_portafolio}}" class="rr2">
+
+                </div>
+            </div>
+      </div>
+
+      <div id="container-vacio" *ngIf="!portafolios">
+          <div class="vacio-cont">
+              <br><br><br>
+              <img src="../../assets/RECURSOS/galeria.png" id="galeria">
+              <br>
+              <p id="perfilp1">Parece que {{designer.Usuario_disenador}} no tiene portafolio todavia</p>
+              <br>
+              <p id="perfilp2">Sigue explorando a los demas diseñadores<br></p>
+             <br>
+          </div>
+      </div>
+
+    
+  </div>
+  <div id="demiB"  *ngIf="portOrabout == true">
+    <div id="demiizquierdo">
+      <p id="sobremi_p">Acerca de</p>
+      <p class="desc">{{designer.Descripcion_disenador}}</p>
+    </div>
+    
+    <div id="demiderecho">
+      <p class="atributos">Calificaciones:</p>
+      <br>
+      <p class="atributos">Certificaciones:</p>
+      <br>
+      <p class="atributos">Logros:</p>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>
+
+<div class="slidebar-contact"  *ngIf="identityE != null">
+  <div class="toggle" (click)="enviarSolicitud()"></div>
+  <div class="scroll">
+  <h2>Contactar a {{designer.Usuario_disenador}}</h2>
+  <form #formEnvio="ngForm" (ngSubmit)="onSubmit(formEnvio)">
+  <input type="text" name="Remitente_m" #Remitente_m="ngModel" [(ngModel)]="message.Remitente_m"  placeholder="Nombre">
+  <input type="email" name="Email_m" #Email_m="ngModel" [(ngModel)]="message.Email_m" placeholder="Email">
+  <input type="hidden" name="Documento_identidad" #Documento_identidad="ngModel" [(ngModel)]="message.Documento_identidad"  placeholder="Phone Number">
+  <textarea name="Mensaje" #Mensaje="ngModel" [(ngModel)]="message.Mensaje" rows="10" cols="50" placeholder="Message"></textarea>
+  <input type="submit" name="" value="Enviar">
+  </form>
+  </div>
+</div>
+
+
+<div class="alert-custom" *ngIf="AlertSuccess">
+  <div class="cont-alert">
+    <div class="contenido">
+      <i class="fa fa-check" aria-hidden="true" id="succ"></i>
+      <h2>Correcto</h2>
+      <p>Se ha enviado su solicitud a {{designer.Usuario_disenador}}</p>
+    </div>
+    <div class="cont-btns">
+      <button (click)="cerrarAlert()">Aceptar</button>
+    </div>
+  </div>
+</div>

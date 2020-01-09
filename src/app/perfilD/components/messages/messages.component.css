@@ -1,0 +1,198 @@
+#banerPerfiledit{
+    background-image: linear-gradient(white, rgba(0, 0 , 0, .1));
+    width: 100%;
+    height: 300px;
+  }
+  #AreaTedit{
+    width: 100%;
+    height: 80%;
+  }
+  #volverperfil{
+    text-decoration: none;
+    margin-left: 10%;
+    color: white;
+    padding: 12px;
+    background-color:#f8a234;
+    border-radius: 3px;
+  }
+  #tituloeditar{
+    margin-top: 5%;
+    margin-left: 10%;
+    font-weight: bold;
+    font-size: 30px;
+    color: #30444d;
+  }
+  #boxeditar{
+    margin-left: 20%;
+    margin-top: 2%;
+    height: 850px;
+    width: 60%;
+    box-shadow: 0 5px 15px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+    text-align: center;
+  }
+  #editaresp{
+    width: 100%;
+    height: 100px;
+  }
+  .lbledit{
+    font-size: 22px;
+    color: #30444d;
+    font-weight: bold;
+  }
+  .inpedit{
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, .2);
+    border-radius: 7px;
+    outline: none;
+  }
+  .inpedit:focus{
+    border-color: rgba(0, 0, 0, .3);
+  }
+  #inppedit{
+    border-width: 3px;
+    width: 60%;
+    border-color: rgba(0, 0, 0, .2);
+    padding: 12px;
+    border-radius: 7px;
+    outline: none;
+  }
+  #inppedit:focus{
+    border-color: rgba(0, 0, 0, .3);
+  }
+  #botonoesedit{
+    width: 100%;
+    height: 100px;
+  }
+  #edit-save{
+    padding: 20px;
+    border: 0;
+    background-color: #f8a234;
+    color: white;
+    outline: none;
+    margin-top: 5%;
+    margin-right: 10%;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  #edit-cancel{
+    padding: 20px;
+    background-color: #30444d;
+    color: white;
+    border: 0;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  #message-edit{
+    padding: 20px;
+    background: #25ac44;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    animation: message .5s;
+  }
+
+  @keyframes message{
+    0%{
+      padding: 0;
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  input,textarea{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+
+  #cont-mensajes{
+    margin-top: 2.5%;
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+  }
+
+  #cont-mensajes i{   
+    margin-top: 1%;
+    font-size: 40px;
+  }
+
+  .icon{
+    margin-left: 5%;
+    color: #f8a234;
+  }
+
+  .delete{
+    margin-left: 65%;
+    color: #dc121E;
+  }
+
+  .mens{
+    background: rgba(0, 0 , 0, 0.05);
+    display: flex;
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .mens:hover{
+    background: rgba(0, 0 , 0, 0.1);
+  }
+
+  #cont-mensajes p{
+    margin-top: 2%;
+    margin-left: 5%;
+  }
+
+  .viewMessage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    height: 600px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    background-color: white;
+    transition: all 1.5s;
+    overflow: scroll;
+  }
+
+
+  #remi{
+    font-weight: bold;
+    font-size: 23px;
+  }
+
+  .viewMessage button{
+    float: right;
+    padding: 12px;
+    border: 0;
+    color: white;
+    background-color: red;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .solicitud-vacio{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .solicitud-vacio span{
+    font-size: 30px;
+    color: #30444d;
+  }
