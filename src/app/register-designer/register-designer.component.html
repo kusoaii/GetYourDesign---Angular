@@ -165,6 +165,6 @@
   </div>
 </div>
 
-<app-date-picker></app-date-picker>
+<app-date-picker (PasarFechaEmitter)="SetDate($event)" *ngIf="openDatePicker"></app-date-picker>
 
 <app-clouds></app-clouds>

@@ -30,6 +30,7 @@
     font-weight: 500;
     background: linear-gradient(to right, #f0b05c, #f8a234);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .part2-iz p{
@@ -60,6 +61,7 @@
     font-weight: 500;
     background: linear-gradient(to right, rgb(240, 199, 64), #F8C20B);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .part4 p{

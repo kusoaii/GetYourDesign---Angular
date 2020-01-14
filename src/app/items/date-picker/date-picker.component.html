@@ -1,59 +1,99 @@
-<div class="contOpacity">
-  <div class="contPicker">
-      <div class="cardPickerInfo">
-          <img src="bi.png" alt="">
-          <br>
-          <a id="dayNumber">{{Day}}</a>
-          <p id="dayWord">{{DayWeek}}</p>
-      </div>
-      <div class="cardPicker">
-              <div class="top">
-                  
-                  <div class="plus topIcons">
-                      <i class="fa fa-times" aria-hidden="true" (click)="showCalendar()"></i>
-                  </div>
-              </div>
-              <div id="bodyCalendar">
-                  <div class="MonthYear" *ngIf="selectMonth == false">
-                      <div class="MonthTXT" (click)="chooseMonth()"><h3 id="monthSelected">{{Month}}</h3></div>
-                      <div class="YearTXT"><h3>{{Year}}</h3></div>
-                  </div>       
-                      <table *ngIf="selectMonth == false">
-                          <thead>
-                              <th>D</th>
-                              <th>L</th>
-                              <th>M</th>
-                              <th>M</th>
-                              <th>J</th>
-                              <th>V</th>
-                              <th>S</th>
-                          </thead>
-                          <tbody id="calendar-body">
-                              {{templateRow}}
-                          </tbody>
-                      </table>
-                      <button id="btnOk" *ngIf="selectMonth == false">Aceptar</button>
+<div class="contPicker">
+    <div class="cardPickerInfo">
+        <br>
+        <a id="dayNumber">{{Day}}</a>
+        <p id="dayWord">{{DayWeek}}</p>
+    </div>
+    <div class="cardPicker">
+        <div class="top">
 
-                      <div class="setmonths" *ngIf="selectMonth == true">
-                        <div class="columnMonths">
-                            <div class="month" (click)="selectedMonth($event)">Enero</div>
-                            <div class="month" (click)="selectedMonth($event)">Marzo</div>
-                            <div class="month" (click)="selectedMonth($event)">Mayo</div>
-                            <div class="month" (click)="selectedMonth($event)">Julio</div>
-                            <div class="month" (click)="selectedMonth($event)">Septiembre</div>
-                            <div class="month" (click)="selectedMonth($event)">Noviembre</div>
-                        </div>
-                        <div class="columnMonths">
-                            <div class="month" (click)="selectedMonth($event)">Febrero</div>
-                            <div class="month" (click)="selectedMonth($event)">Abril</div>
-                            <div class="month" (click)="selectedMonth($event)">Junio</div>
-                            <div class="month" (click)="selectedMonth($event)">Agosto</div>
-                            <div class="month" (click)="selectedMonth($event)">Obtubre</div>
-                            <div class="month" (click)="selectedMonth($event)">Diciembre</div>
-                        </div>                
-                    </div>
+            <div class="plus topIcons">
+                <i class="fa fa-times" aria-hidden="true" (click)="showCalendar()"></i>
+            </div>
+        </div>
+        <div id="bodyCalendar">
+            <div class="MonthYear" *ngIf="selectMonth == false">
+                <div class="MonthTXT" (click)="chooseMonth()">
+                    <h3 id="monthSelected">{{Month}}</h3>
+                </div>
+                <div class="YearTXT" (click)="chooseYear()">
+                    <h3>{{Year}}</h3>
+                </div>
+            </div>
+            <table *ngIf="selectMonth == false && selectYear == false">
+                <thead>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>M</th>
+                    <th>M</th>
+                    <th>J</th>
+                    <th>V</th>
+                    <th>S</th>
+                </thead>
+                <tbody id="calendar-body">
+                    <tr>
+                        <td *ngFor="let day of days[0]" 
+                        (mouseenter)="hoverDay($event)"
+                        (click)="PasarFechaComponentePadre($event)">
+                        {{day}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td *ngFor="let day of days[1]" 
+                        (mouseenter)="hoverDay($event)"
+                        (click)="PasarFechaComponentePadre($event)">
+                        {{day}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td *ngFor="let day of days[2]" 
+                        (mouseenter)="hoverDay($event)"
+                        (click)="PasarFechaComponentePadre($event)">
+                        {{day}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td *ngFor="let day of days[3]" 
+                        (mouseenter)="hoverDay($event)"
+                        (click)="PasarFechaComponentePadre($event)">
+                        {{day}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td *ngFor="let day of days[4]" 
+                        (mouseenter)="hoverDay($event)"
+                        (click)="PasarFechaComponentePadre($event)">
+                        {{day}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-              </div>
-          </div>
-  </div>
+            <div class="setmonths" *ngIf="selectMonth == true">
+                <div class="columnMonths">
+                    <div class="month" (click)="selectedMonth($event)">Enero</div>
+                    <div class="month" (click)="selectedMonth($event)">Marzo</div>
+                    <div class="month" (click)="selectedMonth($event)">Mayo</div>
+                    <div class="month" (click)="selectedMonth($event)">Julio</div>
+                    <div class="month" (click)="selectedMonth($event)">Septiembre</div>
+                    <div class="month" (click)="selectedMonth($event)">Noviembre</div>
+                </div>
+                <div class="columnMonths">
+                    <div class="month" (click)="selectedMonth($event)">Febrero</div>
+                    <div class="month" (click)="selectedMonth($event)">Abril</div>
+                    <div class="month" (click)="selectedMonth($event)">Junio</div>
+                    <div class="month" (click)="selectedMonth($event)">Agosto</div>
+                    <div class="month" (click)="selectedMonth($event)">Obtubre</div>
+                    <div class="month" (click)="selectedMonth($event)">Diciembre</div>
+                </div>
+            </div>
+
+            <div class="setYears" *ngIf="selectYear">
+                <div *ngFor="let year of years" class="yearOP">
+                    <a (click)="selectedYear($event)">{{year}}</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>

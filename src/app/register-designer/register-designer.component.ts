@@ -142,4 +142,10 @@ export class RegisterDesignerComponent implements OnInit {
     }
   }
 
+  SetDate(event) : void{
+    this.openDatePicker = false;
+    console.log(event.Date);
+    this.designer.Fecha_nacimiento = event.Date;
+  }
+
 }
