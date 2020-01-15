@@ -66,6 +66,13 @@
                         {{day}}
                         </td>
                     </tr>
+                    <tr>
+                        <td *ngFor="let day of days[5]" 
+                        (mouseenter)="hoverDay($event)"
+                        (click)="PasarFechaComponentePadre($event)">
+                        {{day}}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
 
