@@ -57,14 +57,13 @@
 
 }
 .part4{
-    text-align: center;
     width: 80%;
-    margin: 0 auto;
+    margin: 100px auto;
     height: 390px;
 }
 
 .part4 h2{
-    font-size: 44px;
+    font-size: 43px;
     font-weight: 500;
     background: linear-gradient(to right, rgb(240, 199, 64), #F8C20B);
     -webkit-background-clip: text;
@@ -72,7 +71,7 @@
     -webkit-text-fill-color: transparent;
 }
 .part4 p{
-    font-size: 18px;
+  font-size: 17px;
 }
 .part4 a{
   text-align: center;
@@ -80,10 +79,17 @@
 }
 .content-a{
     margin-top: 5%;
+    text-align: center;
 }
 #container-result{
     width: 100%;
     height: auto;
+}
+
+.introduccion-text-center{
+  text-align: center;
+  margin: auto;
+  width: 45%;
 }
 
 /*busqueda css*/

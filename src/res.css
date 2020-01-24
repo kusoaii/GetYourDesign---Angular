@@ -135,6 +135,9 @@ transform: scale(1);
     }
 }
 @media (max-width: 900px){
+  .introduccion-text{
+    margin: auto!important;
+  }
     #PiePagina{
         height: 350px!important;
     }
@@ -158,7 +161,7 @@ transform: scale(1);
     }
     .part2{
         display: block!important;
-        margin-top: 9%;
+        margin-top: 15%;
         width: 100%!important;
         height: 850px!important;
     }

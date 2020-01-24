@@ -1,27 +1,4 @@
-header{
-  display: flex;
-  width: 90%;
-  margin: auto;
-  height: 10vh;
-  align-items: center;
-}
-.logo-container,.nav-links,.cart{
-  display: flex;
-}
-.logo-container{
-  flex: 1;
-}
-.logo{
-  font-weight: 400;
-  margin: 5px;
-}
-nav{
-  flex: 2;
-}
-.nav-links{
-  justify-content: space-around;  
-  list-style: none;
-}
+
 .cart{
   flex: 1;
   justify-content: flex-end;
@@ -43,6 +20,10 @@ nav{
 
 .introduccion{
   flex: 1;
+}
+
+.intro-text{
+  animation: molten 1s ease;
 }
 
 .intro-text h1 {
@@ -116,11 +97,17 @@ background-clip: text;
   color: #5c6569;
   cursor: pointer;
 }
-.dot.selected{
-  color:red;
+.dot{
+  width: 16px;
+  height: 16px;
+  background: rgb(204, 201, 201);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s;
 }
-.dot .noSelected{
-  color:blue;
+.dot.activado{
+  background:rgb(52, 52, 53);
+  animation: scale .5s ease;
 }
 .btn-com{
   position: relative;
@@ -172,6 +159,9 @@ background-clip: text;
     transition-delay: 1.5s;
 }
 
+#conjunto{
+  height: 100%;
+}
 
 @keyframes drop{
   0%{
@@ -181,6 +171,27 @@ background-clip: text;
   100%{
       opacity: 0.8;
       transform: translateY(0px);
+  }
+}
+
+@keyframes scale{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes molten{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
   }
 }
 
