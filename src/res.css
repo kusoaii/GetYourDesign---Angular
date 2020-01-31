@@ -135,6 +135,13 @@ transform: scale(1);
     }
 }
 @media (max-width: 900px){
+  .section-pack{
+    flex-direction: column;
+  }
+
+  .section-pack img{
+    width: 100%;
+  }
   .introduccion-text{
     margin: auto!important;
   }

@@ -29,7 +29,7 @@
 .intro-text h1 {
 font-size: 44px;
 font-weight: 500;
-background: linear-gradient(to right, #494964, #6f6f89);
+background: linear-gradient(to right, #494964, #2f2f38);
 -webkit-background-clip: text;
 background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -79,7 +79,7 @@ background-clip: text;
 
 .small-circle{
   position: absolute;
-  bottom: 0%;
+  bottom: -10%;
   left: 15%;
   z-index: -1;
 }

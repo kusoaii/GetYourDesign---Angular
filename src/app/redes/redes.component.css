@@ -1,17 +1,14 @@
-.redes{
-    width: 10%;
-    margin-top: 50px;
-  }
+
 .ul{
-    position: absolute;
-    margin: 0;
-    padding: 10;
+  position: relative;
+  left: 45%;
+  padding: 10;
     display: flex;
   }
   .ul .li{
     position: relative;
     list-style: none;
-    margin: 0 2px;
+    margin: 0 20px;
   }
   .ul .li::before{
     content: '';
@@ -21,7 +18,6 @@
     width: 60px;
     height: 8px;
     background: #000;
-    border-radius: 50%;
     transition: 0.5s;
     opacity: 0;
     filter: blur(2px);
