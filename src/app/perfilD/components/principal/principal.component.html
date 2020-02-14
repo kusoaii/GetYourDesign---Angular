@@ -4,8 +4,7 @@
       <ul>
         <li id="ii1">
           <a id="iconeRES" (click)="abrirMenuRes()" *ngIf="menuResponsive == false"><i class="fa fa-bars"></i></a>
-          <a id="iconeRES" (click)="abrirMenuRes()" *ngIf="menuResponsive == true"><i class="fa fa-times"></i></a>
-          
+          <a id="iconeRES" (click)="abrirMenuRes()" *ngIf="menuResponsive == true"><i class="fa fa-times"></i></a> 
         </li>
         <li><a href="Raking.html" class="menu-item1">Tus proyectos</a></li>
         <li><a href="LINKS\InicioSesion.php" class="menu-item1">Tus clientes</a></li>
@@ -51,7 +50,7 @@
           <app-mosaic-menu></app-mosaic-menu>
         </div>
       </div>
-      <div id="cerrarsesion"><img src="{{resources}}uploads/{{identity.foto_disenador}}" id="cerraricon" (click)="abrirMenu()">
+      <div id="cerrarsesion"><div class="perfilmini"><img src="{{resources}}uploads/{{identity.foto_disenador}}" id="fotoperfil" (click)="abrirMenu()"></div>
         <ul id="cerrarmenu">
           <li><a (click)="cerrarSesion()" class="aa3">Cerrar sesion</a></li>
           <br>
@@ -68,9 +67,8 @@
             <input type="file" name="subir_portafolio" id="file2" class="inputfile" accept="image/*" required (change)="fileToUploadPerfil($event)"/>
               <label for="file2"><i class="fa fa-pencil" aria-hidden="true"></i></label>
         </div>
-          
-    </div>
-    <div id="nombre"><p id="nombredesigner">{{identity.Usuario_disenador}}</p></div>
+      </div>
+      <h2 id="nombredesigner">{{identity.Usuario_disenador}}</h2>
     </div>
     <div id="Edicion">
       <div id="e1"><button class="aa1" (click)="abrirPortafolio()">Portafolio</button></div>
@@ -92,8 +90,7 @@
                 </div>
               <div id="llenar">
                   <div class="porta1" *ngFor="let portafolio of portafolios">
-                      <img src="{{resources}}portafolios/{{portafolio.Nombre_foto_portafolio}}" class="rr2" (click)="onShowPortfolioImage(portafolio)">
-                      
+                      <img src="{{resources}}portafolios/{{portafolio.Nombre_foto_portafolio}}" class="rr2" (click)="onShowPortfolioImage(portafolio)">         
                   </div>
               </div>
         </div>
@@ -101,7 +98,7 @@
         <div id="container-vacio" *ngIf="!portafolios">
             <div class="vacio-cont">
                 <br><br><br>
-                <img src="../../../../assets/RECURSOS/galeria.png" id="galeria">
+                <img src="../../../../assets/RECURSOS/portafolio.png" id="galeria">
                 <br>
                 <p id="perfilp1">Bienvenido a tu perfil</p>
                 <br>
@@ -126,8 +123,7 @@
       </div>
     </div>
 
-  </div>
-
+</div>
   <div class="alert-custom" *ngIf="Alerta">
     <div class="cont-alert">
       <div class="contenido">
@@ -176,6 +172,36 @@
 
   <div class="open-portfolio" *ngIf="openPortfolio">
     <div class="container-image">
-      <img src="" alt="" id="imagePortfolio">
+      
+      <div class="presentation-portfolio">
+        <img src="{{urlPortafolio}}" alt="" id="imagePortfolio">
+      </div>
+      
+      <div class="portfolio-info">
+        <button class="btn-cl" (click)="this.openPortfolio = false">
+          <span class="cl-search">
+            <span class="cl-IZ"></span>
+            <span class="cl-DE"></span>
+          </span>
+        </button>
+        <div class="content-info">
+          <h2>Nombre del portafolio</h2>
+          <p>Por Juanda</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem vel pariatur, adipisci omnis hic sed atque cupiditate sunt modi animi dolore nisi deserunt, ab recusandae, porro asperiores quaerat quis id.</p>
+          <div class="likes-portfolio">
+            <div class="heart">
+              <img src="../../../../assets/RECURSOS/Utilidades/icons8-me-gusta-40.png" alt="">
+            </div>
+            <div class="count-heart">
+              <p>20</p>
+            </div>
+          </div>
+          <div class="buttons-portfolio">
+            <button class="btn-portfolio btn-light">Editar</button>
+            <button class="btn-portfolio btn-red">Eliminar</button>
+          </div>
+        </div>
+      </div> 
+      
     </div>
   </div>

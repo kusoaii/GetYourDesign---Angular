@@ -124,3 +124,11 @@
   border-radius : 6px; 
   color: #fff;
 }
+
+.title-error{
+  color: #c42222;
+}
+
+.alert-custom .contenido{
+  margin-top: 5%;
+}

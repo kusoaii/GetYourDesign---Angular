@@ -3,6 +3,7 @@ import { DesignerService } from '../services/designer.service';
 import { EmpresaService } from '../services/empresa.service';
 import { Designer } from '../models/designer';
 import { Router } from '@angular/router';
+import { GLOBAL } from '../services/global';
 
 @Component({
   selector: 'app-menu',
@@ -22,8 +23,9 @@ export class MenuComponent implements OnInit, DoCheck {
   public designerToFing;
   public respuesta;
   public designers : Designer[];
-  public playerName;
+  public designerFind;
   public menuResponsive : boolean;
+  public urlRecursos;
 
   constructor(
     private _designerService : DesignerService,
@@ -34,6 +36,7 @@ export class MenuComponent implements OnInit, DoCheck {
     this.menuP = false;
     this.designerToFing = '';
     this.menuResponsive = false;
+    this.urlRecursos = GLOBAL.urlRecurso;
   }
 
   ngOnInit() {
@@ -107,10 +110,10 @@ export class MenuComponent implements OnInit, DoCheck {
   }
 
   buscarDesigner(e){
-    if(this.playerName == ''){
+    if(this.designerFind == ''){
       this.designers = null;
     }else{
-      this._designerService.findDesigner(this.playerName).subscribe(
+      this._designerService.findDesigner(this.designerFind).subscribe(
       response =>{
         this.respuesta = response;
         if(this.respuesta.code == 200){
@@ -128,7 +131,7 @@ export class MenuComponent implements OnInit, DoCheck {
   }
 
   mostrarValor(){
-    console.log(this.playerName);
+    console.log(this.designerFind);
   }
 
   abrirMenuRes(){

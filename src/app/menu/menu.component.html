@@ -50,7 +50,7 @@
 </ul>
 <div class="search-form" [ngClass]="{'activado' : menu}">
   <form>
-    <input type="search" placeholder="Busca tu diseñador" id="bb" [(ngModel)]="playerName" name="playerName" (keyup)="buscarDesigner($event)" autocomplete="off">
+    <input type="search" placeholder="Busca tu diseñador" id="bb" [(ngModel)]="designerFind" name="designerFind" (keyup)="buscarDesigner($event)" autocomplete="off">
   </form>
 
 </div>
@@ -72,7 +72,7 @@
     <div id="cuerporanking">
 
     <div class="Designernum1">
-      <div class="Rankimg"><img src="http://localhost:89/Angular7GYDBackend/uploads/{{designer.foto_disenador}}" class="rr1"></div>
+      <div class="Rankimg"><img src="{{urlRecursos}}/uploads/{{designer.foto_disenador}}" class="rr1"></div>
       <div class="Rankdesc">
         
         <p class="ranknombre">{{designer.Usuario_disenador}}</p><br>

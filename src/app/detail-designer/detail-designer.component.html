@@ -11,9 +11,11 @@
   </div>
   <div id="Areafotoperfil">
     <div id="fotico">
-    <img src="{{resources}}uploads/{{designer.foto_disenador}}" id="fotoperfil">
+      <div class="img-box">
+        <img src="{{resources}}uploads/{{designer.foto_disenador}}" id="fotoperfil">
+      </div> 
   </div>
-  <div id="nombre"><p id="nombredesigner">{{designer.Usuario_disenador}}</p><a href="#" class="fa fa-envelope" aria-hidden="true" id="iconocartaB"></a></div>
+  <h3 id="nombredesigner">{{designer.Usuario_disenador}}</h3>
   </div>
   <div id="Edicion">
     <div id="e1"><button class="aa1B" (click)="abrirPortafolio()">Portafolio</button></div>

@@ -46,7 +46,10 @@
   }
 
 
-
+#nombredesigner{
+  font-weight: bold;
+  font-size: 25px;
+}
 
   .content{
     padding: 50px 100px;

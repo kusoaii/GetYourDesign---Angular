@@ -135,6 +135,9 @@ transform: scale(1);
     }
 }
 @media (max-width: 900px){
+  .links-footer{
+    flex-direction: column;
+  }
   .section-pack{
     flex-direction: column;
   }
@@ -145,9 +148,7 @@ transform: scale(1);
   .introduccion-text{
     margin: auto!important;
   }
-    #PiePagina{
-        height: 350px!important;
-    }
+
     .menu{
         position: relative;
         margin: 0 auto;
@@ -339,53 +340,9 @@ transform: scale(1);
         color: #fff;
         font-family: fontAwesome;
     }
-    .ul{
-        position: absolute!important;
-        margin: 0;
-        padding: 10;
-        display: block !important;
-      }
-      .ul .li .a{
-        width: 35px !important;
-        height: 35px !important;
-        display: block;
-        transition: 0.5s;
-      }
-      .ul .li:nth-child(1) .a .span::before,
-  .ul .li:nth-child(1) .a .span::after{
-    font-size: 25px !important;
-  content:"\f09a";
-  }
-
-  .ul .li:nth-child(2) .a .span::before,
-  .ul .li:nth-child(2) .a .span::after{
-    font-size: 25px !important;
-  content:"\f099";
-  }
-
-  .ul .li:nth-child(3) .a .span::before,
-  .ul .li:nth-child(3) .a .span::after{
-    font-size: 25px !important;
-  content:"\f16d";
-  }
-
-  .ul .li:nth-child(4) .a .span::before,
-  .ul .li:nth-child(4) .a .span::after{
-    font-size: 25px !important;
-  content:"\f08c";
-  }
-
-  .ul .li:nth-child(5) .a .span::before,
-  .ul .li:nth-child(5) .a .span::after{
-    font-size: 25px !important;
-  content:"\f0d5";
-  }
-  .ul .li:hover .a{
-    transform: translateY(0px)!important;
-  }
-  #PREDES{
-    font-size: 18px!important;
-  }
+.ul .li{
+  margin: 0 10px!important;
+}
   #Copyright{
     margin-left: 19%;
   }

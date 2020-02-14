@@ -14,10 +14,18 @@
   src: url('./assets/Fonts/Poppins-Medium.ttf');
 }
 
+.title-error{
+  font-family: QuicksandRegular;
+}
+.info-error{
+  font-family: Quicksand-Light;
+  font-weight: 200;
+}
+
 p,a{
   font-family: QuicksandRegular!important;
   font-weight: 300;
-  color: grey;
+  color: rgb(70, 68, 68);
 }
 
 button{
@@ -70,9 +78,41 @@ h1,h2,h3{
   }
   #Areafotoperfil{
     display: flex;
+    align-items: center;
     height: 60%;
     width: 100%;
   }
+#fotoperfil{
+  width: auto;
+  height: 100%;
+  position: relative;
+  left: -40%;
+}
+
+.img-box{
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.content{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 12%;
+  left: -20%;
+  padding-top: 60px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: 0.5s;
+}
+
+#fotico:hover .content{
+  left: 5%;
+}
+
   #Edicion{
     display: flex;
     width: 100%;
@@ -107,21 +147,17 @@ h1,h2,h3{
       margin-left: 20%;
   }
   #fotico{
-    width: 20%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
+    margin-left: 5%;
   }
-  #fotoperfil{
-    margin-left: 10%;
-    margin-top: 10%;
-    width: 65%;
-    height: 85%;
-    border-radius: 50%;
-  }
+
   #nombredesigner{
-     font-weight:bold;
-     margin-top: 100px;
+    font-family: Quicksand-Light;
+     font-weight: 100;
      font-size: 20px;
      color:  #30444d;
+     margin-left: 3%;
   }
   #btneditar{
     border: 0;
@@ -353,12 +389,11 @@ h1,h2,h3{
 
 .cont-alert .btn-aceptar{
   margin-top: 3%;
-  font-family: 'Quicksand', sans-serif;
   padding: 13px;
   border: none;
   background: #62595c;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
   font-size: 15px;
@@ -368,12 +403,11 @@ h1,h2,h3{
 .cont-alert .btn-cancel{
   margin-left: 4%;
   margin-top: 3%;
-  font-family: 'Quicksand', sans-serif;
   padding: 13px;
   border: none;
   background: rgb(223, 54, 54);
   color: #fff;
-  border-radius: 5px;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
   font-size: 15px;
@@ -426,9 +460,10 @@ body{
     width: 490px;
     height: 350px;
     background: white;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     animation: alert-anim 0.5s;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
 }
 
 @keyframes alert-anim{
@@ -522,7 +557,66 @@ input, textarea button{
 .content-img{
   max-width: 100%;
 }
+.presentation-portfolio{
+  display: flex;
+  align-items: center;
+  
+  flex: 2;
+}
 
-.container-image{
+#imagePortfolio{
   margin: auto;
 }
+.container-image{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: white;
+
+  
+}
+.portfolio-info{
+  flex: 1;
+  text-align: justify;
+  display: flex;
+}
+.content-info{
+  height: auto;
+  margin: auto;
+  width: 85%;
+  margin: auto;
+}
+.Rankimg{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.rr1{
+  position: relative;
+  left: -40%;
+  width: auto;
+  height: 100%;
+}
+
+.Rankdesc{
+  width: 20%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+.likes-portfolio{
+  display: flex;
+  height: auto;
+}
+
+.count-heart, .heart{
+  display: flex;
+  align-items: center;
+}
+.count-heart{
+  margin-left: 5px;
+}
+

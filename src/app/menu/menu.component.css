@@ -224,23 +224,23 @@ nav{
     margin-bottom: 6%;
   }
   .Rankimg{
-    width: 20%;
-    height: 100%;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
   }
-  .Rankdesc{
-    width: 20%;
-    height: 100%;
-  }
+  
   .Rankdise1{
     width: 20%;
     height: 100%;
   }
   .rr1{
-    width: 50%;
-    height: 55%;
-    border-radius: 50%;
-    margin-left: 40%;
-    margin-top: 5%;
+    position: relative;
+    left: -40%;
+    width: auto;
+    height: 100%;
   }
   .contactodesi{
     padding: 10px;
