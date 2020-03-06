@@ -176,6 +176,20 @@ td.active:hover{
     animation: entrada .7s;
     overflow-y: scroll;
 }
+.setYears::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.setYears::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.setYears::-webkit-scrollbar-thumb {
+    background-color: #cfcdcd;
+    border-radius: 20px;
+    border: 2px solid #cfcdcd;
+}
+
 .columnMonths{
     width: 50%;
     text-align: center;
