@@ -80,7 +80,8 @@ h1,h2,h3{
     display: flex;
     align-items: center;
     height: 60%;
-    width: 100%;
+    width: 90%;
+    margin: auto;
   }
 #fotoperfil{
   width: auto;
@@ -544,7 +545,6 @@ input, textarea button{
   position: fixed!important;
   top: 0;
   left: 0;
-  display: flex;
   align-items: center;
   background: rgba(0,0,0,0.5);
   text-align: center;
@@ -555,20 +555,18 @@ input, textarea button{
 }
 
 .content-img{
-  max-width: 100%;
+  width: 50%;
 }
 .presentation-portfolio{
   display: flex;
   align-items: center;
-  
-  flex: 2;
+  flex: 1;
 }
 
 #imagePortfolio{
   margin: auto;
 }
 .container-image{
-  display: flex;
   height: 100vh;
   width: 100%;
   background: white;
@@ -576,7 +574,7 @@ input, textarea button{
   
 }
 .portfolio-info{
-  flex: 1;
+  flex: 2;
   text-align: justify;
   display: flex;
 }

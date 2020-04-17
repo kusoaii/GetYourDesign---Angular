@@ -23,9 +23,11 @@ export class MenuComponent implements OnInit, DoCheck {
   public designerToFing;
   public respuesta;
   public designers : Designer[];
+  public portafolios;
   public designerFind;
   public menuResponsive : boolean;
   public urlRecursos;
+  public portfolioResponse;
 
   constructor(
     private _designerService : DesignerService,
@@ -118,6 +120,11 @@ export class MenuComponent implements OnInit, DoCheck {
         this.respuesta = response;
         if(this.respuesta.code == 200){
           this.designers = this.respuesta.data;
+
+          this.designers.forEach( designer =>{
+            this.optenerPortafolios(designer);
+          });
+          
         }else{
           this.designers = null;
         }
@@ -128,6 +135,23 @@ export class MenuComponent implements OnInit, DoCheck {
     );
     }
     
+  }
+
+  optenerPortafolios(designer : Designer) {
+
+    this._designerService.listarPortaRanking(designer.Documento_identidad).subscribe(
+      response => {
+
+        this.portfolioResponse = response;
+        if (this.portfolioResponse.code == 200) {
+          this.portafolios = this.portfolioResponse.data;
+          designer.Portfolios = this.portafolios;
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
   mostrarValor(){

@@ -12,19 +12,13 @@
           <div class="Rankimg"><img src="{{resouces}}uploads/{{designer.foto_disenador}}" class="rr1"></div>
           <div class="Rankdesc">
  
-            <p class="ranknombre">{{designer.Usuario_disenador}}</p><br>
+            <p class="ranknombre" (click)="GoTo(designer.Usuario_disenador)">{{designer.Usuario_disenador}}</p><br>
             <a class="contactodesi" routerLink="/detalle-diseñador/{{designer.Usuario_disenador}}">VER PREFIL</a><br><br>
             <p class="txtdesigner">Puntuacion promedio<br>4.9 estrellas</p>
             <p class="txtdesigner"></p>
           </div>
-            <div class="Rankdise1" *ngFor="let p1 of port1">      
-                <img *ngIf="p1.Documento_identidad == designer.Documento_identidad" src="http://localhost:89/Angular7GYDBackend/portafolios/{{p1.Nombre_foto_portafolio}}" class="diseñocss">
-            </div>
-            <div class="Rankdise1" *ngFor="let p2 of port2">      
-                    <img *ngIf="p2.Documento_identidad == designer.Documento_identidad" src="http://localhost:89/Angular7GYDBackend/portafolios/{{p2.Nombre_foto_portafolio}}" class="diseñocss">
-            </div>
-            <div class="Rankdise1" *ngFor="let p3 of port3">      
-              <img *ngIf="p3.Documento_identidad == designer.Documento_identidad" src="http://localhost:89/Angular7GYDBackend/portafolios/{{p3.Nombre_foto_portafolio}}" class="diseñocss">
+            <div class="Rankdise1" *ngFor="let portfolio of designer.Portfolios">   
+              <img src="http://localhost:8080/Angular7GYDBackend/portafolios/{{portfolio.Nombre_foto_portafolio}}" class="diseñocss">
             </div>
         </div>
 

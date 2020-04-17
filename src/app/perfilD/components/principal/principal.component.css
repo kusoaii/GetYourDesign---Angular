@@ -1,12 +1,16 @@
 #banerPerfil{
-    background-image: linear-gradient(white, rgba(0, 0 , 0, .1));
-    width: 100%;
-    height: 350px;
-  }
+  background-color: #f3f2f0;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#f3f2f0));
+  background-image: -webkit-linear-gradient(#fff,#f3f2f0);
+  background-image: linear-gradient(#fff,#f3f2f0);
+  width: 100%;
+  height: 350px;
+}
   #menuperfil{
     display: flex;
     height: 20%;
-    width: 100%;
+    width: 90%;
+    margin: auto;
   }
   #Arealogito{
     width: 10%;
@@ -35,8 +39,9 @@
 
   #Edicion{
     display: flex;
-    width: 100%;
+    width: 90%;
     height: 20%;
+    margin: auto;
   }
   #e1{
     margin-left: 5%;
@@ -66,14 +71,14 @@
       height: 100%;
       margin-left: 20%;
   }
+
   #iconocarta{
     color: #f8a234;
   }
   
   #nombredesigner{
-     font-weight:bold;
+     font-weight: 600;
      font-size: 25px;
-     color:  #30444d;
   }
   #btneditar{
     border: 0;
@@ -81,7 +86,7 @@
     padding: 15px;
     font-size: 15px;
     border-radius: 3px;
-    background-color: #f8a234;
+    background-color: #eea950;
     text-decoration: none;
   }
   #btneditar:hover{
@@ -96,16 +101,19 @@
   .aa1{
     padding: 10px;
     background: transparent;
-    font-size: 20px;
+    font-size: 17px;
     border: 0;
     outline: none;
     cursor: pointer;
-    color:  #30444d;
-    font-weight: bold;
+    font-weight: 200;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
     transition: .5s linear;
+    border: 2px solid;
   }
   .aa1.bordeado{
-    border-bottom: solid;
+    color:  #fff;
+    background: #4e4d4c;
   }
 
   .aa2{
@@ -117,11 +125,13 @@
     width: 100%;
     height: auto;
   }
+  
   .porta1{
     display: inline-block;
     margin: 0 0 5px;
     width: 100%;
   }
+
   #llenar{
     column-count: 4;
     column-gap: 10px;

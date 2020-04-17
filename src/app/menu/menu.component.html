@@ -38,14 +38,17 @@
   <li *ngIf="identity" class="menPerfil" (click)="abrirmen()">
     <a class="a-hidden" routerLink="/perfil">Perfil</a>
     <a class="a-hidden">Configuracion</a>
-    <a class="nom">{{identity.Usuario_disenador}}</a>
-    <img id="fotoPerfil"src="http://localhost:89/Angular7GYDBackend/uploads/{{identity.foto_disenador}}" alt="">
+    <a class="nom"></a>
+    <div class="cont-img">
+      <img id="fotoPerfil"src="{{urlRecursos}}/uploads/{{identity.foto_disenador}}" alt="">
+    </div>
+    
   </li>
   <li *ngIf="identityE" class="menPerfil" (click)="abrirmen($event)">
     <a class="a-hidden" routerLink="/perfil-E">Perfil</a>
     <a class="a-hidden">Configuracion</a>
     <a class="nom">{{identityE.Usuario_empresa}}</a>
-    <img id="fotoPerfil"src="http://localhost:89/Angular7GYDBackend/uploads/{{identityE.Foto_empresa}}" alt="">
+    <img id="fotoPerfil"src="{{urlRecursos}}uploads/{{identityE.Foto_empresa}}" alt="">
   </li>
 </ul>
 <div class="search-form" [ngClass]="{'activado' : menu}">
@@ -62,8 +65,7 @@
   </span>
 </button>
 
-<a *ngIf="identity == null && identityE == null" class="close" (click)="abrirBusqueda($event)"><i class="fa fa-times"></i></a>
-<a *ngIf="identity || identityE" class="close" (click)="abrirBusqueda2($event)"><i class="fa fa-times"></i></a>
+
 </div>
 </nav>
 
@@ -80,7 +82,9 @@
         <p class="txtdesigner">Puntuacion promedio<br>4.9 estrellas</p>
         <p class="txtdesigner"></p>
       </div>
-        
+      <div class="Rankdise1" *ngFor="let portfolio of designer.Portfolios">   
+        <img src="{{urlRecursos}}/portafolios/{{portfolio.Nombre_foto_portafolio}}" class="diseñocss">
+      </div>
     </div>
 
   </div>

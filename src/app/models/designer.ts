@@ -1,3 +1,5 @@
+import { Portafolio } from './portafolio';
+
 export class Designer{
     constructor(
         public Nombres : string,
@@ -10,6 +12,7 @@ export class Designer{
         public Usuario_disenador : string,
         public Fecha_nacimiento : string,
         public foto_disenador : string,
-        public Confirm_pass : string
+        public Confirm_pass : string,
+        public Portfolios : Portafolio[]
     ){}
 }

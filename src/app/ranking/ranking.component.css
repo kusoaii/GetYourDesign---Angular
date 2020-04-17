@@ -13,16 +13,20 @@
   .Designernum1:nth-child(4){
     margin-bottom: 6%;
   }
-  
-  .Rankdesc{
-    width: 20%;
-    height: 100%;
-  }
+
   .Rankdise1{
-    width: 20%;
+    display: flex;
+    align-items: center;
     height: 100%;
+    overflow: hidden;
+    box-shadow: 0 5px 9px rgba(0,0,0,.1);
+    margin-left: 10px;
+    flex: 1;
   }
 
+  .Rankdise1:hover{
+    box-shadow: 0 5px 50px rgba(0,0,0,.1);
+  }
   .contactodesi{
     padding: 10px;
     background-color: #f8a234;
@@ -47,15 +51,13 @@
     font-size: 15px;
   }
   .diseñocss{
-    width: 90%;
-    height: 80%;
-    margin-left: 1%;
-    transition: .5s;
+    text-align: center;
+    width: auto;
+    margin: auto;
+    height: 95%;
+    transition: .3s;
   }
-  .diseñocss:hover{
-    box-shadow: 0 5px 8px 8px rgba(0, 0, 0, 0.3);
-    transform: scale(1.1);
-  }
+
   #li-result{
       list-style: none;
   }

@@ -13,14 +13,13 @@ import { DesignerService } from '../services/designer.service';
 })
 export class RankingComponent implements OnInit {
 
-  public designers;
+  public designers : Designer[];
   public portafolios;
   public resouces : string;
   public DesignerResponse;
   public portfolioResponse;
   public ports;
   public matrizPortafolios: string[][];
-  public portafolioTemplate;
 
   constructor(
     private _designerService: DesignerService,
@@ -42,9 +41,10 @@ export class RankingComponent implements OnInit {
       response => {
         this.DesignerResponse = response;
         this.designers = this.DesignerResponse.data;
-        this.designers.forEach(designer => {
-          this.optenerPortafolios(designer.Documento_identidad);
+        this.designers.forEach(designer =>{
+          this.optenerPortafolios(designer);
         });
+        console.log(this.designers);
       },
       error => {
         console.log(<any>error);
@@ -52,24 +52,17 @@ export class RankingComponent implements OnInit {
     );
   }
 
-  optenerPortafolios(documento) {
+  optenerPortafolios(designer : Designer) {
 
-    this._designerService.listarPortaRanking(documento).subscribe(
+    this._designerService.listarPortaRanking(designer.Documento_identidad).subscribe(
       response => {
 
         this.portfolioResponse = response;
         if (this.portfolioResponse.code == 200) {
           this.portafolios = this.portfolioResponse.data;
+          designer.Portfolios = this.portafolios;
           this.ports = this.portafolios;
           console.log(this.portafolios);
-          var numeroPortafolio = 0;
-          this.portafolios.forEach(portafolio => {
-              this.matrizPortafolios[numeroPortafolio] = portafolio.Nombre_foto_portafolio;
-              numeroPortafolio = numeroPortafolio + 1;
-          });
-
-          console.log(this.matrizPortafolios);
-
         }
       },
       error => {
@@ -78,5 +71,8 @@ export class RankingComponent implements OnInit {
     );
   }
 
-
+  GoTo(route : string){
+    console.log(route);
+    this._route.navigate(['/detalle-diseñador/'+ route]);
+  }
 }

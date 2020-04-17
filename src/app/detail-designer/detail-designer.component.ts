@@ -21,7 +21,7 @@ export class DetailDesignerComponent implements OnInit, DoCheck {
   public p;
   public designer : Designer;
   public respuesta;
-  public portafolios;
+  public portafolios : Portafolio[];
   public respuestaPorta;
   public portafolio : Portafolio;
   public identityE;
@@ -40,7 +40,7 @@ export class DetailDesignerComponent implements OnInit, DoCheck {
     this.resources = GLOBAL.urlRecurso;
     this.portOrabout = true;
     this.p = document.getElementsByClassName('aa1B');
-    this.designer = new Designer('','','','','','','','','','',''); 
+    this.designer = new Designer('','','','','','','','','','','', this.portafolios); 
     this.getDesigner();
     this.message = new Message('','','','','');  
     this.AlertSuccess = false;

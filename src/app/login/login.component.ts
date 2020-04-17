@@ -4,6 +4,7 @@ import { Empresa } from '../models/empresa';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { DesignerService } from '../services/designer.service';
 import { GLOBAL } from '../services/global';
+import { Portafolio } from '../models/portafolio';
 
 @Component({
   selector: 'app-login',
@@ -18,13 +19,14 @@ export class LoginComponent implements OnInit {
   public Alerta : boolean;
   public identity;
   public inPerfil;
+  public portafolios : Portafolio[];
 
   constructor(
     private _designerService : DesignerService,
     private _route : ActivatedRoute,
     private _router : Router
   ) { 
-    this.designer = new Designer('','','','','','','','','','','');
+    this.designer = new Designer('','','','','','','','','','','', this.portafolios);
     this.Alerta = false;
     this.inPerfil = '1';
     

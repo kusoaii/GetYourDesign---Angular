@@ -3,6 +3,7 @@ import { Designer } from '../models/designer';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { DesignerService } from '../services/designer.service';
 import { GLOBAL } from '../services/global';
+import { Portafolio } from '../models/portafolio';
 
 @Component({
   selector: 'app-register-designer',
@@ -24,6 +25,8 @@ export class RegisterDesignerComponent implements OnInit {
   public AlertSuccess : boolean;
   public terminos;
   public openDatePicker : boolean;
+  public portafolios : Portafolio[];
+
 
   constructor(
     private _designerService : DesignerService,
@@ -32,7 +35,7 @@ export class RegisterDesignerComponent implements OnInit {
   ) {
     this.next = false;
     this.next = false;
-    this.designer = new Designer('','','','','','','','','','','');
+    this.designer = new Designer('','','','','','','','','','','', this.portafolios);
     this.Alerta = false;
     this.AlertSuccess = false;
     this.openDatePicker = false;
