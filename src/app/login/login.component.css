@@ -89,6 +89,11 @@
     width: 70%;
     margin-left: 15%;
   }
+
+.contenido button{
+
+}
+
 #err{
     margin-top: 8%;
     font-size: 120px;
@@ -102,19 +107,25 @@
 }
 .cont-btns{
   width: 100%;
-  margin-top: 3%;
+  margin-top: 1%;
 }
 
-.cont-alert button{
+.cont-alert{
+  display: flex;
+  align-items: center;
+}
+
+.contenido button{
   margin-top: 3%;
-  font-family: 'Montserrat', sans-serif;
-  padding: 11px;
+  padding: 9px;
   border: none;
-  background: #62595c;
+  background: #757374;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
 }
 .message-valid{
   margin-left: 40%;
@@ -131,4 +142,13 @@
 
 .alert-custom .contenido{
   margin-top: 5%;
+}
+
+.contenido img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: grayscale(.5);
+  height: 300px;
+  z-index: -1;
 }

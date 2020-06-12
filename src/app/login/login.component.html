@@ -8,15 +8,17 @@
   <h1>Iniciar sesión</h1>
   <h2>_</h2>
   <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
-      
+
     <div class="inputBox">
-      <input type="text" name="Usuario_login" #Usuario_disenador="ngModel" [(ngModel)]="designer.Usuario_disenador" required>
+      <input type="text" name="Usuario_login" #Usuario_disenador="ngModel" [(ngModel)]="designer.Usuario_disenador"
+        required>
       <label>Usuario</label>
-      
+
     </div>
 
     <div class="inputBox">
-      <input type="password" name="Contrasena_login" #Contrasena_login="ngModel" [(ngModel)]="designer.password" required>
+      <input type="password" name="Contrasena_login" #Contrasena_login="ngModel" [(ngModel)]="designer.password"
+        required>
       <label>Contraseña</label>
     </div>
 
@@ -32,18 +34,14 @@
   </form>
 </div>
 
-
-
 <div class="alert-custom" *ngIf="Alerta">
   <div class="cont-alert">
     <div class="contenido">
-      <img src="../../assets/RECURSOS/Utilidades/err.png" alt="">
       <h2 class="title-error">¡Fallo al ingresar!</h2>
       <p class="info-error">El usuario y la contraseña no coinciden</p>
-    </div>
-    <div class="cont-btns">
       <button (click)="cerrarAlert()">Aceptar</button>
     </div>
+
   </div>
 </div>
 

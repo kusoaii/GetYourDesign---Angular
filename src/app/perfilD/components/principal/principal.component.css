@@ -68,7 +68,7 @@
   }
   #iconperfil{
       width: 55%;
-      height: 100%;
+      height: auto;
       margin-left: 20%;
   }
 
@@ -296,11 +296,11 @@
 
 .cont-alert .btn-aceptar{
   margin-top: 3%;
-  padding: 13px;
+  padding: 11px;
   border: none;
   background: #62595c;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
   font-size: 15px;
@@ -308,13 +308,13 @@
 }
 
 .cont-alert .btn-cancel{
-  margin-left: 4%;
+  margin-left: 5%;
   margin-top: 3%;
-  padding: 13px;
+  padding: 11px;
   border: none;
-  background: rgb(223, 54, 54);
+  background: rgb(224, 65, 65);
   color: #fff;
-  border-radius: 5px;
+  border-radius: 2px;
   outline: none;
   cursor: pointer;
   font-size: 15px;
@@ -454,4 +454,13 @@ i{
   margin-left: 10px;
   background: rgb(212, 207, 207);
   border-radius: 2px;
+}
+
+.contenido{
+  width: 100%;
+}
+
+.cont-alert{
+  display: flex;
+  align-items: center;
 }

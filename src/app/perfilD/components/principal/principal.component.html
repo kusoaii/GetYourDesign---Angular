@@ -127,14 +127,10 @@
   <div class="alert-custom" *ngIf="Alerta">
     <div class="cont-alert">
       <div class="contenido">
-        <i class="fa fa-exclamation-circle" aria-hidden="true" id="err"></i>
         <h2>¿Estas seguro?</h2>
         <p>De subir este elemento a la plataforma</p>
-      </div>
-      <div class="cont-btns">
         <button (click)="subirPorta()" class="btn-aceptar">Aceptar</button>
         <button (click)="cerrarAlert()" class="btn-cancel">Cancelar</button>
-        
       </div>
     </div>
   </div>
@@ -143,14 +139,10 @@
   <div class="alert-custom" *ngIf="AlertaPerfil">
       <div class="cont-alert">
         <div class="contenido">
-          <i class="fa fa-exclamation-circle" aria-hidden="true" id="err"></i>
           <h2>¿Estas seguro?</h2>
           <p>De subir este elemento a la plataforma</p>
-        </div>
-        <div class="cont-btns">
-          <button (click)="editarFoto()" class="btn-aceptar">Aceptar</button>
-          <button (click)="cerrarAlert()" class="btn-cancel">Cancelar</button>
-          
+            <button (click)="editarFoto()" class="btn-aceptar">Aceptar</button>
+            <button (click)="cerrarAlert()" class="btn-cancel">Cancelar</button>
         </div>
       </div>
     </div>
@@ -158,7 +150,6 @@
   <div class="alert-custom" *ngIf="AlertaDelete">
     <div class="cont-alert">
       <div class="contenido">
-        <i class="fa fa-exclamation-circle" aria-hidden="true" id="dan"></i>
         <h2>¿Estas seguro?</h2>
         <p>De eliminar este elemento</p>
       </div>

@@ -1,17 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
 @font-face{
   font-family: Quicksand-Light;
-  src: url('./assets/Fonts/Poppins-Light.ttf');
+  src: url('./assets/Fonts/Poppins/Poppins-Light.ttf');
 }
 
 @font-face{
   font-family: QuicksandRegular;
-  src: url('./assets/Fonts/Poppins-Regular.ttf');
+  src: url('./assets/Fonts/Poppins/Poppins-Regular.ttf');
 }
 
 @font-face{
   font-family: Quicksand-Medium;
-  src: url('./assets/Fonts/Poppins-Medium.ttf');
+  src: url('./assets/Fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face{
+  font-family: Lobster;
+  src: url('./assets/Fonts/Lobster/Lobster-Regular.ttf');
 }
 
 .title-error{
@@ -459,9 +463,9 @@ body{
     left: 50%;
     transform: translate(-50%, -60%);
     width: 490px;
-    height: 350px;
+    height: 300px;
     background: white;
-    border-radius: 5px;
+    border-radius: 1px;
     text-align: center;
     animation: alert-anim 0.5s;
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
@@ -478,13 +482,10 @@ body{
     }
 }
 
-/*CSS ANIMACION*/
 .loader{
-  
   position: relative;
-  font-size: 2em;
+  font-size: 1.8em;
   background: #fff;
-  color: #f8a234;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: .5em;
@@ -492,12 +493,12 @@ body{
 }
 
 .loader span{
+  font-family: Lobster;
   color: #fff;
   mix-blend-mode: difference;
 }
 
 .loader::before{
-  font-family: Quicksand-Medium;
   content: '';
   position: absolute;
   top: 0;
@@ -505,7 +506,7 @@ body{
   width: 80px;
   height: 30%;
   background: #000;
-  animation: Lanimate 3s linear infinite;
+  animation: Lanimate 3s ease-in-out infinite;
   border-radius: 10px;
 }
 
@@ -570,8 +571,6 @@ input, textarea button{
   height: 100vh;
   width: 100%;
   background: white;
-
-  
 }
 .portfolio-info{
   flex: 2;
