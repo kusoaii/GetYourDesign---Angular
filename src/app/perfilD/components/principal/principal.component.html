@@ -16,14 +16,12 @@
         <form>
             <input type="search" placeholder="search">
         </form>
-  
       </div>
       <a class="close1"><i class="fa fa-times"></i></a>
     </div>
   </div>
   <div id="AreafotoperfilRES">
-          <img src="{{resources}}uploads/{{identity.foto_disenador}}" id="fotoperfilRES">
-       
+    <img src="{{resources}}uploads/{{identity.foto_disenador}}" id="fotoperfilRES">
   <p id="nombredesignerRES">{{identity.Usuario_disenador}}</p>
   <div id="e4RES"><a routerLink="/perfil/editar" id="btneditar">Editar perfil</a></div>
   </div>
@@ -31,7 +29,6 @@
     <div id="e1RES"><button class="aa1" (click)="abrirPortafolio()">Portafolio</button></div>
     <div id="e2RES"><button class="aa1" (click)="abrirSobremi()">Sobre mi</button></div>
     <div id="e3RES"></div>
-    
   </div>
 </div>
 
@@ -159,40 +156,6 @@
         
       </div>
     </div>
-  </div>
+  </div> 
 
-  <div class="open-portfolio" *ngIf="openPortfolio">
-    <div class="container-image">
-      
-      <div class="presentation-portfolio">
-        <img src="{{urlPortafolio}}" alt="" id="imagePortfolio">
-      </div>
-      
-      <div class="portfolio-info">
-        <button class="btn-cl" (click)="this.openPortfolio = false">
-          <span class="cl-search">
-            <span class="cl-IZ"></span>
-            <span class="cl-DE"></span>
-          </span>
-        </button>
-        <div class="content-info">
-          <h2>Nombre del portafolio</h2>
-          <p>Por Juanda</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem vel pariatur, adipisci omnis hic sed atque cupiditate sunt modi animi dolore nisi deserunt, ab recusandae, porro asperiores quaerat quis id.</p>
-          <div class="likes-portfolio">
-            <div class="heart">
-              <img src="../../../../assets/RECURSOS/Utilidades/icons8-me-gusta-40.png" alt="">
-            </div>
-            <div class="count-heart">
-              <p>20</p>
-            </div>
-          </div>
-          <div class="buttons-portfolio">
-            <button class="btn-portfolio btn-light">Editar</button>
-            <button class="btn-portfolio btn-red">Eliminar</button>
-          </div>
-        </div>
-      </div> 
-      
-    </div>
-  </div>
+  <app-view-portfolio [portfolio]="portfolioToSend" (EmitterViewPortfolio)="closeViewPortfolio($event)" *ngIf="openPortfolio"></app-view-portfolio>

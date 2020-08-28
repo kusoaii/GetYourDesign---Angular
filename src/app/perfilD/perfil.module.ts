@@ -12,6 +12,7 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { editComponent } from './components/edit/edit.componet';
 import { MessagesComponent } from './components/messages/messages.component';
 import { MosaicMenuComponent } from '../Fragments/mosaic-menu/mosaic-menu.component';
+import { ViewPortfolioComponent } from '../Fragments/view-portfolio/view-portfolio.component';
 
 //Guard
 import { PerfilGuard } from '../services/perfil.guard';
@@ -22,7 +23,8 @@ import { PerfilGuard } from '../services/perfil.guard';
         PrincipalComponent,
         editComponent,
         MessagesComponent,
-        MosaicMenuComponent
+        MosaicMenuComponent,
+        ViewPortfolioComponent
     ],
     imports: [
         CommonModule,

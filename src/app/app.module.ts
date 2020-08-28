@@ -18,13 +18,13 @@ import { RankingComponent } from './ranking/ranking.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterEmpComponent } from './register-emp/register-emp.component';
 import { DetailDesignerComponent } from './detail-designer/detail-designer.component';
+import { DatePickerComponent } from './items/date-picker/date-picker.component';
+import { CloudsComponent } from './items/clouds/clouds.component';
+import { LoadingComponent } from './items/loading/loading.component';
 
 //Modulos
 import { PerfilModule } from './perfilD/perfil.module';
 import { PerfilEModule } from './perfilE/perfilE.module';
-import { DatePickerComponent } from './items/date-picker/date-picker.component';
-import { CloudsComponent } from './items/clouds/clouds.component';
-
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { CloudsComponent } from './items/clouds/clouds.component';
     RegisterEmpComponent,
     DetailDesignerComponent,
     DatePickerComponent,
-    CloudsComponent
+    CloudsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

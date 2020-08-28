@@ -34,6 +34,7 @@ export class PrincipalComponent implements OnInit, DoCheck {
   public menuMosaic: boolean;
   public openPortfolio: boolean;
   public urlPortafolio;
+  public portfolioToSend : Portafolio;
 
   constructor(
     private _designerService: DesignerService,
@@ -242,8 +243,7 @@ export class PrincipalComponent implements OnInit, DoCheck {
   }
 
   onShowPortfolioImage(portafolio) {
-    console.log(portafolio);
-    let image = document.getElementById("imagePortfolio") as HTMLImageElement;
+    this.portfolioToSend = portafolio;
     this.urlPortafolio = GLOBAL.urlRecurso + "portafolios/" + portafolio.Nombre_foto_portafolio;
     if (this.openPortfolio) {
       this.openPortfolio = false;
@@ -251,6 +251,10 @@ export class PrincipalComponent implements OnInit, DoCheck {
     else {
       this.openPortfolio = true;
     }
+  }
+
+  closeViewPortfolio(event) : void{
+    this.openPortfolio = false;
   }
 
 }
